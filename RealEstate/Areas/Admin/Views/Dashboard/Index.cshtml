@@ -1,0 +1,221 @@
+﻿@*
+	For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["header-title"] = "Dashboard";
+}
+<div class="row justify-content-between p-3" id="container_of_dashboard">
+    <!-- header cards start -->
+    <div class="align-items-center d-flex flex-column my-2">
+        <div id="statistics_container">
+            <div class="col-12 p-3 flex-wrap justify-content-center align-items-center d-flex">
+                <div class="header_card_container">
+                    <div class="d-flex flex-column">
+                        <!-- value  -->
+                        <h4 dir="ltr">
+                            @ViewBag.count_of_providers
+                        </h4>
+
+                        <!-- title  -->
+                        <h6>Count Of Providers</h6>
+                    </div>
+                    <i class="fa fa-2x fa-solid fa-user-tie mb-2 "></i>
+                </div>
+                <div class="header_card_container">
+                    <div class="d-flex flex-column">
+                        <!-- value  -->
+                        <h4 dir="ltr">
+                            @ViewBag.count_of_customers
+                        </h4>
+
+                        <!-- title  -->
+                        <h6>Count Of Customers</h6>
+                    </div>
+                    <i class="fa fa-2x fa-solid fa-users  mb-2 "></i>
+                </div>
+                <div class="header_card_container">
+                    <div class="d-flex flex-column">
+                        <!-- value  -->
+                        <h4 dir="ltr">
+                            @ViewBag.count_of_properties
+                        </h4>
+
+                        <!-- title  -->
+                        <h6>Count Of Properties</h6>
+                    </div>
+                    <i class="fa fa-2x fa-solid fa-hotel  mb-2 "></i>
+                </div>
+                <div class="header_card_container">
+                    <div class="d-flex flex-column">
+                        <!-- value  -->
+                        <h4 dir="ltr">
+                            @ViewBag.count_of_properties_rent
+                        </h4>
+
+                        <!-- title  -->
+                        <h6>Count Of Properties Rent</h6>
+                    </div>
+                    <i class="fa fa-2x fa-solid  fa-house-chimney-user mb-2 "></i>
+                </div>
+                <div class="header_card_container">
+                    <div class="d-flex flex-column">
+                        <!-- value  -->
+                        <h4 dir="ltr">
+                            @ViewBag.count_of_properties_sale
+                        </h4>
+
+                        <!-- title  -->
+                        <h6>Count Of Properties Sale</h6>
+                    </div>
+                    <i class="fa fa-2x fa-solid fa-house-fire  mb-2 "></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- header cards end -->
+    <!-- Properties start -->
+    <div class="align-items-center  d-flex flex-column justify-content-center w-100 my-5 p-0 primary_background_color" style="border-radius: 9px 9px 0px 0px;">
+        <h1 class="my-3 text-center" style="font-size: 46px;color: #fff;">
+            Pending  Properties
+        </h1>
+        <div class="bg-white shadow-sm table-responsive w-100 p-2">
+            <table class="table datatable">
+                <thead>
+                    <tr>
+                        <th>Owner Type</th>
+                        <th>Owner Name</th>
+                        <th>Title</th>
+                        <th>Service Type</th>
+                        <th>Full Total</th>
+                        <th>Region</th>
+                        <th>City</th>
+                        <th>With Maintenance Contract</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (RealEstate.Models.Property.PropertyDataTableRowDataModal property in ViewBag.Properties)
+                    {
+                        <tr>
+                            <td>@property.OwnerType</td>
+                            <td>@property.OwnerName</td>
+                            <td>@property.Title</td>
+                            <td>@property.ServiceType </td>
+                            <td>@property.FullTotal </td>
+                            <td>@property.Region </td>
+                            <td>@property.City </td>
+                            <td>@property.WithMaintenanceContract </td>
+                            <td style="color:@(@property.StatusColor)">@property.Status </td>
+                            <td>
+                                <div class="d-flex ">
+                                    <a asp-action="Edit" asp-controller="Properties" asp-route-id="@property.Id"><i class='fa-solid fa-edit btn-dragon color-1 btn-dragon-action mx-2'></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- Properties end -->
+    <!-- Contracts start -->
+    <div class="align-items-center  d-flex flex-column justify-content-center w-100 my-5 p-0 primary_background_color" style="border-radius: 9px 9px 0px 0px;">
+        <h1 class="my-3 text-center" style="font-size: 46px;color: #fff;">
+            Not Completed Contracts
+        </h1>
+        <div class="bg-white shadow-sm table-responsive w-100 p-2">
+            <table class="table datatable">
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Property</th>
+                        <th>Provider</th>
+                        <th>Customer</th>
+                        <th>From Date</th>
+                        <th>To Date</th>
+                        <th>FullTotal</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (Contract.ContractDataTableRowDataModal contract in ViewBag.Contracts)
+                    {
+                        <tr>
+                            <td>@contract.Type </td>
+                            <td>@contract.Property </td>
+                            <td>@contract.Provider </td>
+                            <td>@contract.Customer </td>
+                            <td>@contract.FromDate</td>
+                            <td>@contract.ToDate</td>
+                            <td>@contract.FullTotal </td>
+                            <td style="color:@contract.StatusColor">@contract.Status</td>
+                            <td>
+                                <div class="d-flex ">
+                                    <a asp-action="Show" asp-controller="Contracts" asp-route-id="@contract.Id"><i class='fa-solid fa-eye btn-dragon color-10 btn-dragon-action mx-2'></i></a>
+                                    @if (contract.Status != Contract.ContractStatus.Canceled && contract.Status != Contract.ContractStatus.Done)
+                                    {
+                                        <a asp-action="Edit" asp-controller="Contracts" asp-route-id="@contract.Id"><i class='fa-solid fa-edit btn-dragon color-1 btn-dragon-action mx-2'></i></a>
+                                    }
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- Contracts end -->
+</div>
+
+<style>
+    #container_of_dashboard {
+        font-family: 'Tajawal', sans-serif;
+    }
+
+    .header_card_container {
+        color: #fff;
+        padding: 15px;
+        width: 300px;
+        height: 100px;
+        background-color: #1d7773;
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+        border-radius: 11px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 15px;
+    }
+
+        .header_card_container i {
+            font-size: 35px;
+        }
+
+    #example_filter {
+        display: flex !important;
+        justify-content: flex-end !important;
+    }
+
+    td img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+    }
+
+    td {
+        align-content: center;
+        align-items: center;
+    }
+
+    .dataTables_empty {
+        text-align: center;
+    }
+
+</style>
+<script>
+    $(document).ready(function () {
+        $("#preloader").hide();
+    });
+</script>
+

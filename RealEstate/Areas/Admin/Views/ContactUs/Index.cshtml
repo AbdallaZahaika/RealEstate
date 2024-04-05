@@ -1,0 +1,40 @@
+﻿@using RealEstate.Models
+@{
+    @model List<RealEstate.Models.ContactUs>
+
+}
+<div class="align-items-center  d-flex flex-column justify-content-center w-100 my-5 p-0 primary_background_color" style="border-radius: 9px 9px 0px 0px;">
+    <h1 class="my-3 text-center" style="font-size: 46px;color: #fff;">
+        Contact Us
+    </h1>
+    <div class="bg-white shadow-sm table-responsive w-100 p-2">
+        <table class="table datatable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Subject</th>
+                    <th>Message</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (ContactUs contactUs in Model)
+                {
+                    <tr>
+                        <td>@contactUs.Name</td>
+                        <td>@contactUs.Email</td>
+                        <td>@contactUs.Subject</td>
+                        <td>@contactUs.Message</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#preloader").hide();
+    })
+</script>

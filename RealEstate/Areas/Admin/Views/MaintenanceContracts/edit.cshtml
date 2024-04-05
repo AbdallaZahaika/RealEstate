@@ -1,0 +1,428 @@
+﻿@model RealEstate.Models.MaintenanceContract
+<div class="justify-content-center row my-4 p-3">
+    <div class="bg-white col-12 p-3 shadow-sm" style="border-radius: 13px;">
+        <!-- ///////////////////// title /////////////////////// -->
+        <h1 class="text-center">Edit Maintenance Contracts</h1>
+        <hr>
+        <div id="container_of_form_data" class="row">
+            <div class="col-xl-3 col-lg-3 col-12">
+                <label class="form-label" asp-for="Title">Title</label>
+                <input type="text" asp-for="Title" name="Title" class="form-control"
+                       with-booking-from-a-to-z-validate="true"
+                       booking-from-a-to-z-form-val-is-required="true"
+                       booking-from-a-to-z-form-val-max-length="255">
+                <span class="input_error_message"></span>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-12">
+                <label class="form-label" asp-for="FullTotal">Full Total</label>
+                <input type="number" asp-for="FullTotal" name="FullTotal" class="form-control"
+                       with-booking-from-a-to-z-validate="true"
+                       booking-from-a-to-z-form-val-is-required="true"
+                       booking-from-a-to-z-form-val-min-number="0">
+                <span class="input_error_message"></span>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-12">
+                <label class="form-label" asp-for="Status">Status</label>
+                <select asp-for="Status" name="Status" class="form-control"
+                        with-booking-from-a-to-z-validate="true"
+                        booking-from-a-to-z-form-val-is-required="true">
+                    <option value="">Select</option>
+                    <option value="Pending">Pending</option>
+                    <option value="InProcessing">InProcessing</option>
+                    <option value="Done">Done</option>
+                    <option value="Canceled">Canceled</option>
+                </select>
+                <span class="input_error_message"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Note" class="form-label">
+                    Note
+                </label>
+                <textarea class="form-control" id="Note" name="Note" cols="50" asp-for="Note"
+                          autocomplete="OFF" value="" style="resize: none;height: 180px;" placeholder=""
+                          with-booking-from-a-to-z-validate="true"
+                          booking-from-a-to-z-form-val-is-required="true"
+                          booking-from-a-to-z-form-val-max-length="2000"></textarea>
+                <span class="input_error_message"></span>
+            </div>
+            <!-- Dropzone start -->
+            <div class="col-12 mt-3 mb-5 w-100">
+                <h5 class="mt-3 mb-3">
+                    Upload Images
+                </h5>
+                <section class="upload-file mt-4 w-100">
+                    <div class="dropzone-files-preview-container" data-files>
+                        @foreach (RealEstateFile realestate_file_data in ViewBag.Documents)
+                        {
+                            <div class="dropzone-file-preview-container">
+                                <img src="@realestate_file_data.Url" alt="image" class="dropzone-file-preview-image" />
+                                <button class="btn-dragon color-11 mx-0 dropzone-file-preview-remove-button" data-file-remove="" rel-image-id="@realestate_file_data.Id" rel-image-index="">Remove</button>
+                            </div>
+                        }
+                    </div>
+                    <div class="dropzone p-0" data-dropzone>
+                        <div class="dropzone__field">
+                            <label class="dropzone__label" for="files" data-dropzone-label>
+                                Drop here or click to upload Images
+                            </label>
+                            <input class="dropzone__file d-none" id="files" name="files[]" type="file" multiple
+                                   data-dropzone-file>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- Dropzone end -->
+            <div class="col-12 d-flex justify-content-center align-items-center">
+                <button type="button" class="btn-dragon color-9 m-0 my-2 w-25" id="update_submit" style="min-width:300px">Update</button>
+            </div>
+        </div>
+        <!-- /////////////////////////////////////////////////// -->
+    </div>
+</div>
+
+<script>
+    const dropzone_form_data = new FormData();
+    let dropzone_image_index = 0;
+
+    function isDragAndDropSupported() {
+        return typeof document.createElement('div').ondrop != 'undefined';
+    }
+
+    function isFileAllowed(file) {
+        var allowedTypes = ['image/jpg', 'image/jpeg', 'image/png', 'application/pdf'];
+        return allowedTypes.includes(file.type);
+    }
+
+    function isFormDataSupported() {
+        return typeof FormData == 'function';
+    }
+
+    function isFileApiSupported() {
+        const input = document.createElement('input');
+        input.type = 'file';
+
+        return typeof input.files != 'undefined';
+    }
+
+    if (isDragAndDropSupported() && isFormDataSupported() && isFileApiSupported()) {
+        var Dropzone = function (container) {
+            this.dropzone = container;
+            this.dropzone.classList.add('dropzone--actual');
+            this.dropzone.querySelector('[data-dropzone-label]').classList.add('button');
+
+            this.setupDropzone();
+            this.setupFileInput();
+            this.setupStatusBox();
+            this.setupFiles();
+            this.setupFileRemove();
+        }
+        Dropzone.prototype.setupDropzone = function () {
+            this.dropzone.addEventListener('dragover', this.onDragOver.bind(this));
+            this.dropzone.addEventListener('dragleave', this.onDragLeave.bind(this));
+            this.dropzone.addEventListener('drop', this.onDrop.bind(this));
+        }
+
+        Dropzone.prototype.onDragOver = function (event) {
+            event.preventDefault();
+            this.dropzone.classList.add('dropzone--dragover');
+        }
+
+        Dropzone.prototype.onDragLeave = function () {
+            this.dropzone.classList.remove('dropzone--dragover');
+        }
+
+        Dropzone.prototype.onDrop = function (event) {
+            event.preventDefault();
+            this.dropzone.classList.remove('dropzone--dragover');
+            this.status.innerHTML = 'Uploading files, please wait...';
+            this.uploadFiles(event.dataTransfer.files);
+        }
+
+        Dropzone.prototype.setupFileInput = function () {
+            this.fileInput = document.querySelector('[data-dropzone-file]');
+            this.fileInput.addEventListener('change', this.onFileChange.bind(this));
+            this.fileInput.addEventListener('focus', this.onFileFocus.bind(this));
+            this.fileInput.addEventListener('blur', this.onFileBlur.bind(this));
+        }
+
+        Dropzone.prototype.onFileChange = function (event) {
+            this.status.innerHTML = 'Uploading files, please wait...';
+            this.uploadFiles(event.currentTarget.files);
+        }
+
+        Dropzone.prototype.onFileFocus = function () {
+            this.dropzone.querySelector('[data-dropzone-label]').classList.add('dropzone__label--focused');
+        }
+
+        Dropzone.prototype.onFileBlur = function () {
+            this.dropzone.querySelector('[data-dropzone-label]').classList.remove('dropzone__label--focused');
+        }
+
+        Dropzone.prototype.setupStatusBox = function () {
+            this.status = document.createElement('div');
+            this.status.className = 'visually-hidden';
+            this.status.setAttribute('role', 'status');
+            this.status.setAttribute('aria-live', 'polite');
+
+            this.dropzone.appendChild(this.status);
+        }
+
+        Dropzone.prototype.setupFiles = function () {
+            this.file = document.querySelector('.dropzone-files-preview-container');
+        }
+
+        Dropzone.prototype.setupFileRemove = function () {
+
+            document.querySelector('[data-files]').addEventListener('click', this.onFileRemoveClick.bind(this));
+        }
+
+        Dropzone.prototype.onFileRemoveClick = function (event) {
+            const eventTarget = event.target;
+
+            if (eventTarget.hasAttribute('data-file-remove')) {
+                const item_image_index = eventTarget.getAttribute('rel-image-index');
+                const image_id = eventTarget.getAttribute('rel-image-id');
+                if (image_id) {
+                    dropzone_form_data.append(`DeletedDocumentsIds[]`, image_id);
+                } else {
+                    dropzone_form_data.delete(`Documents[${item_image_index}]`);
+                }
+                const listItem = eventTarget.parentNode;
+                listItem.parentNode.removeChild(listItem);
+            }
+        }
+
+        Dropzone.prototype.uploadFiles = function (files) {
+            for (const file of files)
+                this.uploadFile(file);
+        }
+        Dropzone.prototype.uploadFile = function (file) {
+            var self = this; // reference to the Dropzone instance
+
+            if (!isFileAllowed(file)) {
+                Swal.fire({
+                    icon: "error",
+                    text: "File should be an image."
+                });
+                return;
+            }
+
+            var reader = new FileReader();
+            reader.onload = function (event) {
+                var dataUrl = event.target.result;
+                file.dropzone_image_index = ++dropzone_image_index;
+
+                dropzone_form_data.append(`Documents[${file.dropzone_image_index}]`, file);
+
+                // Now that we have the image URL, append the HTML with the image URL set.
+                var filePreviewHtml = self.getStatusHtml(file, dataUrl);
+                $(self.file).append(filePreviewHtml);
+            };
+
+            reader.onerror = function () {
+                Swal.fire({
+                    icon: "error",
+                    text: "There was an error reading the file."
+                });
+            };
+
+            // Read the file as Data URL
+            reader.readAsDataURL(file);
+        };
+
+        Dropzone.prototype.getStatusHtml = function (result, dataUrl) {
+            return `
+                                                                                                                            <div class="dropzone-file-preview-container">
+                                                                                                                                <img src="${dataUrl}" alt="${result.name}" class="dropzone-file-preview-image" />
+                                                                                                                                                    <button class="btn-dragon color-11 mx-0 dropzone-file-preview-remove-button" data-file-remove="" rel-image-index="${result.dropzone_image_index}">Remove</button>
+                                                                                                                            </div>
+                                                                                                                        `;
+        };
+    }
+
+    if (typeof Dropzone != 'undefined')
+        new Dropzone(document.querySelector('[data-dropzone]'));
+
+    $(document).ready(function () {
+        $("#preloader").hide();
+        $(document).on('click', '#update_submit', function () {
+            /* check data */
+            let error_count = 0;
+            $("#container_of_form_data").find('input,select,textarea').each(function () {
+                const check_error_in_element = booking_from_a_to_z_validate_input_data(this);
+                if (check_error_in_element == false) {
+                    error_count++;
+                }
+            })
+
+            if (error_count == 0) {
+                const formData = new FormData();
+                const data = $("#container_of_form_data").find('input,select,textarea').getForm2obj();
+                Object.entries(data).forEach(([input_key, input_value]) => {
+                    formData.append(input_key, input_value);
+                });
+
+                if (dropzone_form_data && dropzone_form_data.entries()) {
+                    for (const form_item of dropzone_form_data.entries()) {
+                        formData.append(form_item[0], form_item[1]);
+                    }
+                }
+                formData.append("Id", "@Html.Raw(Model.Id)");
+                $("#preloader").show();
+                $.ajax({
+                    url: "@Url.Action("Update")",
+                    type: 'POST',
+                    data: formData,
+                    dataType: 'json',
+                    processData: false,
+                    contentType: false,
+                    success: function (result) {
+                        $("#preloader").hide();
+                        if (result.success == true) {
+                            Swal.fire({
+                                confirmButtonText: 'Yes',
+                                icon: 'success',
+                                title: 'Update Maintenance Contracts',
+                                text: 'Successfully',
+                            }).then(() => {
+                                window.location.href = "@Url.Action("Index")";
+                            })
+                        } else {
+                            Swal.fire({
+                                confirmButtonText: 'Yes',
+                                icon: 'error',
+                                title: 'Ops',
+                                text: result.message,
+                            })
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        $("#preloader").hide();
+                        Swal.fire({
+                            confirmButtonText: "Ok",
+                            icon: 'error',
+                            title: 'ops',
+                            text: 'an error has been identified in the provided information',
+                        });
+                    }
+                });
+            } else {
+                Swal.fire({
+                    confirmButtonText: 'Ok',
+                    icon: 'error',
+                    title: 'ops',
+                    text: 'an error has been identified in the provided information',
+                })
+            }
+        })
+
+    });
+</script>
+
+<style>
+    .dropzone {
+        margin-bottom: 1rem;
+        background-color: transparent !important;
+    }
+
+    .dropzone--actual {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 3rem;
+        border: .125rem dashed #5f5f5f94;
+        border-radius: .125rem;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .dropzone--actual__label {
+        margin-bottom: 0;
+    }
+
+        .dropzone--actual__label::after {
+            content: '';
+        }
+
+    .dropzone--actual__label--focused {
+        outline: 0;
+        box-shadow: 0 0 .0625rem .25rem #5e9ed6;
+    }
+
+    .dropzone--actual__file {
+        position: absolute;
+        left: -9999em;
+    }
+
+    .dropzone--actual__upload {
+        display: none;
+    }
+
+    .dropzone--dragover {
+        background-color: #ddd;
+    }
+
+    .dropzone__field {
+        width: 100%;
+        height: 141px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .dropzone__label {
+        cursor: pointer;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent !important;
+        color: #000 !important;
+        transition: all 0.3s ease-in-out;
+    }
+
+        .dropzone__label:hover {
+            color: #1D7773 !important;
+        }
+
+    .dropzone--actual:hover {
+        border-color: #1D7773 !important;
+    }
+
+    .dropzone-file-preview-container {
+        width: 200px;
+        height: 250px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        box-shadow: 0 .125rem .25rem rgba(0,0,0,.075) !important;
+        background-color: #fff;
+        padding: 1rem !important;
+        border-radius: 9px;
+        margin: 10px !important;
+    }
+
+    .dropzone-file-preview-image {
+        width: 100%;
+        height: 175px;
+        border-radius: 9px;
+        object-fit: cover;
+    }
+
+
+    .dropzone-file-preview-remove-button {
+        height: 31px !important;
+        border-radius: 5px !important;
+        margin: 0px !important;
+    }
+
+    .dropzone-files-preview-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 15px 0px;
+    }
+</style>

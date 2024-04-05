@@ -1,0 +1,345 @@
+﻿<!-- hot deals start-->
+<div class="bg-white justify-content-between my-5 p-4" style="border-radius: 10px;">
+    <!-- header -->
+    <div class="my-3">
+        <span class="home_page_section_header_line_markeer"></span>
+        <h3 class="mb-0" style="color:#ff6f6f;"><i class="fa-solid fa-fire"></i> Hot Deals</h3>
+    </div>
+    <div id="container_of_hot_deals_slider" style="position: relative;width:100%">
+        @if (ViewBag.HotDeals != null)
+        {
+            @foreach (Property.PropertyDataTableRowDataModal PropertyHotDeal in ViewBag.HotDeals)
+            {
+                <a asp-area="Customer" asp-controller="Houses" asp-action="Show" asp-route-id="@PropertyHotDeal.Id" class="property-card-container">
+                    <div class="property-card-service-type" style="background-color:@(PropertyHotDeal.ServiceType == Property.ServiceTypes.Sale ? "#ff8555" : "#6f96ff")">@PropertyHotDeal.ServiceType</div>
+                    <div class="property-card-hot-deal"><i class="fa-solid fa-fire"></i></div>
+                    <div class="property-card-image" style="background-image:url(@PropertyHotDeal.MainImage)"></div>
+                    <div class="p-2">
+                        <h5 class="property-card-title">@PropertyHotDeal.Title</h5>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h6><i class="fa-solid fa-house-circle-exclamation"></i> Type:@PropertyHotDeal.Type</h6>
+                            <h6><i class="fa-solid fa-maximize"></i> Size:@(PropertyHotDeal.PropertySize)M</h6>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h6><i class="fa-solid fa-person-booth"></i> Rooms:@PropertyHotDeal.NumberOfRooms</h6>
+                            <h6><i class="fa-solid fa-toilet"></i> Bathrooms:@PropertyHotDeal.NumberOfBathrooms</h6>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center">
+                                <h6><i class="fa-solid fa-city"></i> @PropertyHotDeal.Region</h6>
+                                <h6 class="mx-2">|</h6>
+                                <h6><i class="fa-solid fa-tree-city"></i> @PropertyHotDeal.City	</h6>
+                            </div>
+                            <h4 class="property-card-price">₪@PropertyHotDeal.FullTotal</h4>
+                        </div>
+                    </div>
+                </a>
+            }
+        }
+        else
+        {
+            <div class="w-100 align-items-center d-flex justify-content-center">
+                <div class="my-4 bg-white align-items-center d-flex justify-content-center p-3" style="border-radius: 17px;min-height: 102px;min-width:400px">
+                    <i class="fa-solid fa-magnifying-glass" style="font-size: 20px;"></i>
+                    <h4 class="text-center mx-2">There is no information</h4>
+                    <i class="fa-solid fa-face-sad-tear" style="font-size: 20px;color:red"></i>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<!-- hot deals end -->
+<!-- rents start-->
+<div class="bg-white justify-content-between my-5 p-4" style="border-radius: 10px;">
+    <!-- header -->
+    <div class="my-3">
+        <span class="home_page_section_header_line_markeer"></span>
+        <h3 class="mb-0" style="color:#6f96ff;"><i class="fa-solid fa-house-flag"></i> Rents</h3>
+    </div>
+    <div id="container_of_rents_slider" style="position: relative;width:100%">
+        @if (ViewBag.Rents != null)
+        {
+            @foreach (Property.PropertyDataTableRowDataModal RentProperty in ViewBag.Rents)
+            {
+                <a asp-area="Customer" asp-controller="Houses" asp-action="Show" asp-route-id="@RentProperty.Id" class="property-card-container">
+                    @if (RentProperty.IsHotDeal == true)
+                    {
+                        <div class="property-card-hot-deal"><i class="fa-solid fa-fire"></i></div>
+                    }
+                    <div class="property-card-image" style="background-image:url(@RentProperty.MainImage)"></div>
+                    <div class="p-2">
+                        <h5 class="property-card-title">@RentProperty.Title</h5>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h6><i class="fa-solid fa-house-circle-exclamation"></i> Type:@RentProperty.Type</h6>
+                            <h6><i class="fa-solid fa-maximize"></i> Size:@(RentProperty.PropertySize)M</h6>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h6><i class="fa-solid fa-person-booth"></i> Rooms:@RentProperty.NumberOfRooms</h6>
+                            <h6><i class="fa-solid fa-toilet"></i> Bathrooms:@RentProperty.NumberOfBathrooms</h6>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center">
+                                <h6><i class="fa-solid fa-city"></i> @RentProperty.Region</h6>
+                                <h6 class="mx-2">|</h6>
+                                <h6><i class="fa-solid fa-tree-city"></i> @RentProperty.City</h6>
+                            </div>
+                            <h4 class="property-card-price">₪@RentProperty.FullTotal</h4>
+                        </div>
+                    </div>
+                </a>
+            }
+        }
+        else
+        {
+            <div class="w-100 align-items-center d-flex justify-content-center">
+                <div class="my-4 bg-white align-items-center d-flex justify-content-center p-3" style="border-radius: 17px;min-height: 102px;min-width:400px">
+                    <i class="fa-solid fa-magnifying-glass" style="font-size: 20px;"></i>
+                    <h4 class="text-center mx-2">There is no information</h4>
+                    <i class="fa-solid fa-face-sad-tear" style="font-size: 20px;color:red"></i>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<!-- rents end -->
+<!-- Sales start-->
+<div class="bg-white justify-content-between my-5 p-4" style="border-radius: 10px;">
+    <!-- header -->
+    <div class="my-3">
+        <span class="home_page_section_header_line_markeer"></span>
+        <h3 class="mb-0" style="color:#ff8555;"><i class="fa-solid fa-house-chimney-user"></i> Sales</h3>
+    </div>
+    <div id="container_of_sales_slider" style="position: relative;width:100%">
+        @if (ViewBag.Sales != null)
+        {
+            @foreach (Property.PropertyDataTableRowDataModal SaleProperty in ViewBag.Sales)
+            {
+                <a asp-area="Customer" asp-controller="Houses" asp-action="Show" asp-route-id="@SaleProperty.Id" class="property-card-container">
+                    @if (SaleProperty.IsHotDeal == true)
+                    {
+                        <div class="property-card-hot-deal"><i class="fa-solid fa-fire"></i></div>
+                    }
+                    <div class="property-card-image" style="background-image:url(@SaleProperty.MainImage)"></div>
+                    <div class="p-2">
+                        <h5 class="property-card-title">@SaleProperty.Title</h5>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h6><i class="fa-solid fa-house-circle-exclamation"></i> Type:@SaleProperty.Type</h6>
+                            <h6><i class="fa-solid fa-maximize"></i> Size:@(SaleProperty.PropertySize)M</h6>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h6><i class="fa-solid fa-person-booth"></i> Rooms:@SaleProperty.NumberOfRooms</h6>
+                            <h6><i class="fa-solid fa-toilet"></i> Bathrooms:@SaleProperty.NumberOfBathrooms</h6>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center">
+                                <h6><i class="fa-solid fa-city"></i> @SaleProperty.Region</h6>
+                                <h6 class="mx-2">|</h6>
+                                <h6><i class="fa-solid fa-tree-city"></i> @SaleProperty.City</h6>
+                            </div>
+                            <h4 class="property-card-price">₪@SaleProperty.FullTotal</h4>
+                        </div>
+                    </div>
+                </a>
+            }
+        }
+        else
+        {
+            <div class="w-100 align-items-center d-flex justify-content-center">
+                <div class="my-4 bg-white align-items-center d-flex justify-content-center p-3" style="border-radius: 17px;min-height: 102px;min-width:400px">
+                    <i class="fa-solid fa-magnifying-glass" style="font-size: 20px;"></i>
+                    <h4 class="text-center mx-2">There is no information</h4>
+                    <i class="fa-solid fa-face-sad-tear" style="font-size: 20px;color:red"></i>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<!-- Sales end -->
+<!-- About Us start -->
+<div class="bg-white justify-content-between my-5 p-4" style="border-radius: 10px;">
+    <!-- header -->
+    <div class="">
+        <span class="home_page_section_header_line_markeer"></span>
+        <h3 class="mb-0" style="color:#4d8bff;"><i class="fa-solid  fa-book-atlas"></i> About Us</h3>
+    </div>
+    <div class="p-2 row w-100">
+        <div class="col-xl-8 col-lg-8 col-12 p-2">
+            <h2>Realestate - Where Dreams Find Their Address</h2>
+
+            <p>At Realestate, we are more than just a company; we are a dedicated team committed to helping you find not just a property, but a place to call home. With a keen eye on the pulse of the market and a heart for our client's needs, we specialize in creating matches between people and properties.</p>
+
+            <h3>Our Mission:</h3>
+            <p>To lead the real estate industry with a blend of innovative solutions, ethical service, and a seamless client experience that transforms how people think about property.</p>
+
+            <h3>Our Core Services:</h3>
+            <ul class="core-services">
+                <li><strong>Rent:</strong> Whether you're looking for a residential retreat or a commercial space, our rental listings are curated to provide you with a plethora of options that align with your lifestyle and business needs.</li>
+                <li><strong>Sales:</strong> Our sales experts are here to guide you through every step of buying or selling, making the process as efficient and rewarding as possible. We pride ourselves on our ability to close deals that feel like victories for both buyers and sellers.</li>
+                <li><strong>Maintenance Contracts:</strong> We understand that property ownership comes with responsibilities. Our maintenance contracts are designed to ensure that your investment is always in top condition, preserving its value and providing peace of mind.</li>
+            </ul>
+
+            <h3>Our Commitment:</h3>
+            <p>At Realestate, we build trust through consistent delivery of our promises and by setting the standard for service in real estate. We're committed to standing by you throughout your real estate journey, ensuring that every interaction with us moves you closer to finding your perfect property solution.</p>
+
+            <p>Discover your next property opportunity with Realestate, where every service we offer is a cornerstone to fulfilling your real estate needs.</p>
+        </div>
+        <div class="align-items-center col-12 col-lg-4 col-xl-4 d-flex justify-content-center ">
+            <img src="@Url.Content("~/images/NewLogo.png")" style="width:100%;">
+        </div>
+    </div>
+</div>
+<!-- About Us end -->
+<script>
+    $(document).ready(function () {
+        $("#preloader").hide();
+
+        /* hot deals slider start */
+        $("#container_of_hot_deals_slider").slick({
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            arrows: true,
+            dots: false,
+            autoplay: true,
+            prevArrow: '<button class="slide-arrow prev-arrow new_slider_arrow" style="position: absolute;top: -6px;left: -16px;"><i class="fa-solid fa-chevron-left" style="font-size: 25px;"></i></button>',
+            nextArrow: '<button class="slide-arrow next-arrow new_slider_arrow" style="position: absolute;top: -6px;right: 0px;"><i class="fa-solid fa-chevron-right" style="font-size: 25px;"></i></i></button>',
+            responsive: [{
+                breakpoint: 1199,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 890,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 530,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 384,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+            ],
+        });
+        /* hot deals slider end */
+
+
+        /* rents slider start */
+        $("#container_of_rents_slider").slick({
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            arrows: true,
+            dots: false,
+            autoplay: true,
+            prevArrow: '<button class="slide-arrow prev-arrow new_slider_arrow" style="position: absolute;top: -6px;left: -16px;"><i class="fa-solid fa-chevron-left" style="font-size: 25px;"></i></button>',
+            nextArrow: '<button class="slide-arrow next-arrow new_slider_arrow" style="position: absolute;top: -6px;right: 0px;"><i class="fa-solid fa-chevron-right" style="font-size: 25px;"></i></i></button>',
+            responsive: [{
+                breakpoint: 1199,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 890,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 530,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 384,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+            ],
+        });
+        /* rents slider end */
+
+
+        /* Sales slider start */
+        $("#container_of_sales_slider").slick({
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            arrows: true,
+            dots: false,
+            autoplay: true,
+            prevArrow: '<button class="slide-arrow prev-arrow new_slider_arrow" style="position: absolute;top: -6px;left: -16px;"><i class="fa-solid fa-chevron-left" style="font-size: 25px;"></i></button>',
+            nextArrow: '<button class="slide-arrow next-arrow new_slider_arrow" style="position: absolute;top: -6px;right: 0px;"><i class="fa-solid fa-chevron-right" style="font-size: 25px;"></i></i></button>',
+            responsive: [{
+                breakpoint: 1199,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 890,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 530,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 384,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+            ],
+        });
+        /* Sales slider end */
+    })
+</script>

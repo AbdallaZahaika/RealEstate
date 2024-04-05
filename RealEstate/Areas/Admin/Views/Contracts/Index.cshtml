@@ -1,0 +1,114 @@
+﻿<div class="align-items-center  d-flex flex-column justify-content-center w-100 my-5 p-0 primary_background_color" style="border-radius: 9px 9px 0px 0px;">
+    <h1 class="my-3 text-center" style="font-size: 46px;color: #fff;">
+        Contracts
+    </h1>
+    <div class="bg-white shadow-sm table-responsive w-100 p-2">
+        <table class="table datatable">
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Property</th>
+                    <th>Provider</th>
+                    <th>Customer</th>
+                    <th>From Date</th>
+                    <th>To Date</th>
+                    <th>FullTotal</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Contract.ContractDataTableRowDataModal contract in Model)
+                {
+                    <tr>
+                        <td>@contract.Type </td>
+                        <td>@contract.Property </td>
+                        <td>@contract.Provider </td>
+                        <td>@contract.Customer </td>
+                        <td>@contract.FromDate?.Date</td>
+                        <td>@contract.ToDate?.Date</td>
+                        <td>₪@contract.FullTotal </td>
+                        <td style="color:@contract.StatusColor">@contract.Status</td>
+                        <td>
+                            <div class="d-flex ">
+                                <a asp-action="Show" asp-route-id="@contract.Id"><i class='fa-solid fa-eye btn-dragon color-10 btn-dragon-action mx-2'></i></a>
+                                @if (contract.Status != Contract.ContractStatus.Canceled && contract.Status != Contract.ContractStatus.Done)
+                                {
+                                    <a asp-action="Edit" asp-route-id="@contract.Id"><i class='fa-solid fa-edit btn-dragon color-1 btn-dragon-action mx-2'></i></a>
+                                }
+                                <i class='fa-solid fa-trash btn-dragon color-11 btn-dragon-action delete_button' rel-id="@contract.Id"></i>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $("#preloader").hide();
+        $(".delete_button").on("click", function () {
+            var row_id = $(this).attr("rel-id");
+            Swal.fire({
+                title: 'Are you sure?',
+                text: 'You won\'t be able to revert this!',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: '@Url.Action("Delete")',
+                        type: 'POST',
+                        data: { id: row_id },
+                        success: function (result) {
+                            Swal.fire({
+                                icon: 'success',
+                                text: result.message,
+                                confirmButtonText: 'OK'
+                            }).then(() => {
+                                window.location.reload();
+                            });
+                        },
+                        error: function () {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Ops',
+                                text: 'An error occurred during the request.',
+                                confirmButtonText: 'OK'
+                            });
+                        }
+                    });
+                }
+            });
+        });
+
+
+    });
+</script>
+
+<style>
+    #example_filter {
+        display: flex !important;
+        justify-content: flex-end !important;
+    }
+
+    td img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+    }
+
+    td {
+        align-content: center;
+        align-items: center;
+    }
+
+    .dataTables_empty {
+        text-align: center;
+    }
+
+</style>

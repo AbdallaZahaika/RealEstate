@@ -1,0 +1,563 @@
+﻿@model RealEstate.Models.Property.PropertyViewDetailsModel
+<!-- title -->
+<div class="bg-white align-items-center d-flex my-2 p-3" style="border-radius: 7px;">
+    <a asp-area="Client" asp-controller="Home" asp-action="Index">Home</a>    <div class="separator"></div>
+    <span>house page</span>
+</div>
+<div class="container-fluid my-4">
+    <div class="row  bg-white justify-content-between" style="border-radius: 10px;" id="house_view_container_of_form_data">
+        <!-- house details start -->
+        <div class="col-xl-7 col-lg-7 col-12 p-3 d-flex flex-column justify-content-between" style="position: relative;" id="house_view_container_of_house_details" rel-id="@Model.Id">
+            <div class="d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-center">
+                    <!-- title -->
+                    <h1 class="mb-0">@Model.Title</h1>
+
+                    <!-- price -->
+                    <div>
+                        <div class="house_view_house_container_of_price">
+                            <span class="house_view_price">₪@Model.FullTotal</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center">
+                    <h6><i class="fa-solid fa-city"></i> Region: @Model.Region</h6>
+                    <h6 class="mx-2">|</h6>
+                    <h6><i class="fa-solid fa-tree-city"></i> City:  @Model.City</h6>
+                </div>
+                <!-- Features start  -->
+                <div class="row my-3">
+                    <h5>Features:</h5>
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+                        <h6><i class="fa-solid fa-house-circle-exclamation"></i> Type:@Model.Type</h6>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+                        <h6><i class="fa-solid fa-maximize"></i> Size:@(Model.PropertySize)M</h6>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+                        <h6><i class="fa-solid fa-person-booth"></i> Rooms:@Model.NumberOfRooms</h6>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+                        <h6><i class="fa-solid fa-toilet"></i> Bathrooms:@Model.NumberOfBathrooms</h6>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+                        <h6><i class="fa-solid fa-arrows-up-to-line"></i> Floors:@Model.NumberOfFloors</h6>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+                        <h6><i class="fa-solid fa-users-between-lines"></i> Floor:@Model.FloorNumber</h6>
+                    </div>
+                </div>
+                <!-- Features end  -->
+                <!-- description  -->
+                <div class="my-2">
+                    <h5 class="mb-1">Description:</h5>
+                    <p style="word-wrap: break-word;">@Model.Note</p>
+                </div>
+            </div>
+            <!-- actions -->
+            <div class="align-items-center d-flex flex-wrap justify-content-between">
+                @if (ViewBag.IsUserLoggedIn == true)
+                {
+                    @if (Model.haveContract == true)
+                    {
+                        <button type="button" disabled class="btn-dragon color-11 w-100 mx-2" style="margin: 15px 0px;min-width: 200px;">Reviewing the Contract <i class="fa-solid fa-file-signature"></i></button>
+                    }
+                    else
+                    {
+                        <button type="button" class="btn-dragon color-5 w-100 mx-2" id="create_a_contract_button" style="margin: 15px 0px;min-width: 200px;">Create a contract <i class="fa-solid fa-file-pen"></i></button>
+                    }
+                }
+                else
+                {
+                    <p><span style="color:red">*</span> To proceed with the Create a contract process, kindly log in to your account.</p>
+                    <a asp-area="Customer" asp-controller="Account" asp-action="Login" class="w-100">
+                        <!-- redirect to login -->
+                        <button type="button"
+                                class="btn-dragon color-5 w-100 my-3 mx-0">
+                            Login
+                        </button>
+                    </a>
+                }
+            </div>
+        </div>
+        <!-- house details end -->
+        <!-- house images start -->
+        <div class="col-xl-5 col-lg-5 col-12 p-4" dir="ltr" id="container_of_house_images_slider">
+            <!-- main image -->
+            <div style="position: relative;width: 100%;">
+                <img src="@Model.MainImage" id="house_main_image" alt="house main image">
+                <div class="property-card-service-type" style="background-color:@(Model.ServiceType == Property.ServiceTypes.Sale ? "#ff8555" : "#6f96ff")">@Model.ServiceType</div>
+
+                @if (Model.IsHotDeal == true)
+                {
+                    <div class="property-card-hot-deal"><i class="fa-solid fa-fire"></i></div>
+                }
+            </div>
+            @if (Model.Images.Count() > 1)
+            {
+                <!-- small images -->
+                <div class="w-100" dir="ltr">
+                    <div id="container_of_house_small_images_slider" style="position: relative;padding: 0px 20px;">
+                        @foreach (string image_utl in Model.Images)
+                        {
+                            <div class="mt-2">
+                                <img src="@image_utl" class="house_slider_image @( image_utl == Model.MainImage ? "house_slider_image_active" : "" )" alt="house image">
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+
+        </div>
+        <!-- house images end -->
+    </div>
+
+    <!-- rents start-->
+    <div class="bg-white justify-content-between my-5 p-4" style="border-radius: 10px;">
+        <!-- header -->
+        <div class="my-3">
+            <span class="home_page_section_header_line_markeer"></span>
+            <h3 class="mb-0" style="color:#ff6f8f;"><i class="fa-solid fa-house-chimney-medical"></i> Discover similar </h3>
+        </div>
+        @if (ViewBag.MoreProperties != null)
+        {
+            <div id="container_of_more_properties_slider" style="position: relative;width:100%">
+                @foreach (Property.PropertyDataTableRowDataModal MoreProperty in ViewBag.MoreProperties)
+                {
+                    <a asp-area="Customer" asp-controller="Houses" asp-action="Show" asp-route-id="@MoreProperty.Id" class="property-card-container">
+                        @if (MoreProperty.IsHotDeal == true)
+                        {
+                            <div class="property-card-hot-deal"><i class="fa-solid fa-fire"></i></div>
+                        }
+                        <div class="property-card-image" style="background-image:url(@MoreProperty.MainImage)"></div>
+                        <div class="p-2">
+                            <h5 class="property-card-title">@MoreProperty.Title</h5>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h6><i class="fa-solid fa-house-circle-exclamation"></i> Type:@MoreProperty.Type</h6>
+                                <h6><i class="fa-solid fa-maximize"></i> Size:@(MoreProperty.PropertySize)M</h6>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h6><i class="fa-solid fa-person-booth"></i> Rooms:@MoreProperty.NumberOfRooms</h6>
+                                <h6><i class="fa-solid fa-toilet"></i> Bathrooms:@MoreProperty.NumberOfBathrooms</h6>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex align-items-center">
+                                    <h6><i class="fa-solid fa-city"></i> @MoreProperty.Region</h6>
+                                    <h6 class="mx-2">|</h6>
+                                    <h6><i class="fa-solid fa-tree-city"></i> @MoreProperty.City</h6>
+                                </div>
+                                <h4 class="property-card-price">₪@MoreProperty.FullTotal</h4>
+                            </div>
+                        </div>
+                    </a>
+                }
+            </div>
+        }
+        else
+        {
+            <div class="w-100 align-items-center d-flex justify-content-center">
+                <div class="my-4 bg-white align-items-center d-flex justify-content-center p-3" style="border-radius: 17px;min-height: 102px;min-width:400px">
+                    <i class="fa-solid fa-magnifying-glass" style="font-size: 20px;"></i>
+                    <h4 class="text-center mx-2">There is no information</h4>
+                    <i class="fa-solid fa-face-sad-tear" style="font-size: 20px;color:red"></i>
+                </div>
+            </div>
+        }
+    </div>
+    <!-- rents end -->
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#preloader").hide();
+
+
+        /* more properties slider start */
+        $("#container_of_more_properties_slider").slick({
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            arrows: true,
+            dots: false,
+            autoplay: true,
+            prevArrow: '<button class="slide-arrow prev-arrow new_slider_arrow" style="position: absolute;top: -6px;left: -16px;"><i class="fa-solid fa-chevron-left" style="font-size: 25px;"></i></button>',
+            nextArrow: '<button class="slide-arrow next-arrow new_slider_arrow" style="position: absolute;top: -6px;right: 0px;"><i class="fa-solid fa-chevron-right" style="font-size: 25px;"></i></i></button>',
+            responsive: [{
+                breakpoint: 1199,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 890,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 530,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+            {
+                breakpoint: 384,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+            ],
+        });
+        /* rents slider end */
+
+
+        /* small images slider */
+        $("#container_of_house_small_images_slider").slick({
+            infinite: true,
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            arrows: true,
+            dots: false,
+            prevArrow: '<button class="slide-arrow prev-arrow house_view_small_images_slider_arrow" style="position: absolute;top: 41%;left: -16px;"><i class="fa-solid fa-chevron-left" style="font-size: 25px;"></i></button>',
+            nextArrow: '<button class="slide-arrow next-arrow house_view_small_images_slider_arrow" style="position: absolute;top: 41%;right: 0px;"><i class="fa-solid fa-chevron-right" style="font-size: 25px;"></i></i></button>',
+            responsive: [{
+                breakpoint: 1199,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                },
+            },
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 5,
+                    slidesToScroll: 5,
+                },
+            },
+            {
+                breakpoint: 765,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
+                },
+            },
+            {
+                breakpoint: 490,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                },
+            },
+            {
+                breakpoint: 400,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                },
+            },
+            {
+                breakpoint: 310,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },
+            ],
+        });
+
+
+        /* update selected porduct main image */
+        $(document).on('click', '.house_slider_image', function () {
+            const image_url = $(this).attr('src');
+            /* remove active class */
+            $('.house_slider_image').removeClass('house_slider_image_active');
+
+            /* add active class */
+            $(this).addClass('house_slider_image_active');
+
+            /* update main image */
+            $("#house_main_image").attr('src', image_url)
+        })
+
+        $(document).on("click", "#create_a_contract_button", function () {
+            const formData = new FormData();
+            formData.append('PropertyId', "@Html.Raw(Model.Id)")
+            $("#preloader").show();
+            $.ajax({
+                url: "@Url.Action("CreateContract")",
+                type: 'POST',
+                data: formData,
+                dataType: 'json',
+                processData: false,
+                contentType: false,
+                success: function (result) {
+                    $("#preloader").hide();
+                    if (result.success == true) {
+                        Swal.fire({
+                            confirmButtonText: 'Yes',
+                            icon: 'success',
+                            title: 'Create Contract',
+                            text: 'Created Successfully',
+                        }).then(() => {
+                            window.location.href = "@Url.Action("Index", "Contracts")";
+                        })
+                    } else {
+                        Swal.fire({
+                            confirmButtonText: 'Yes',
+                            icon: 'error',
+                            title: 'Ops',
+                            text: result.message,
+                        })
+                    }
+                },
+                error: function (xhr, status, error) {
+                    $("#preloader").hide();
+                    Swal.fire({
+                        confirmButtonText: "Ok",
+                        icon: 'error',
+                        title: 'ops',
+                        text: 'an error has been identified in the provided information',
+                    });
+                }
+            });
+        });
+
+    })
+</script>
+
+
+
+
+<style>
+    @@media only screen and (max-width: 990px) {
+        #house_view_container_of_form_data {
+            flex-direction: column-reverse !important;
+        }
+    }
+
+    @@media only screen and (max-width: 452px) {
+        .btn-dragon {
+            width: 100% !important;
+        }
+    }
+
+    .container_of_house_add_to_wishlist_button {
+        <?php echo $this->session->userdata('language') == 'english' ? "right: 0px !important;left: auto;" : "" ?>;
+    }
+
+    #house_view_add_to_wishlist_button {
+        text-decoration: none !important;
+        margin: 10px 13px;
+        font-size: 30px;
+        font-weight: 500;
+        color: #000000b0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        cursor: pointer;
+    }
+
+        #house_view_add_to_wishlist_button::after {
+            content: "";
+            height: 55px;
+            width: 55px;
+            background-color: #ff0000bd !important;
+            transform: scale(0);
+            border-radius: 50%;
+            position: absolute;
+            z-index: -1;
+            transition: all 0.3s;
+        }
+
+    .house_view_cart_house_update_quantity_button {
+        text-align: center;
+        height: 38px;
+        width: 38px;
+        line-height: 33px;
+        font-size: 22px;
+        color: #fff;
+        background-color: #0C82E3;
+        border-radius: 5px;
+        transition: 0.5s;
+        border: 2px solid transparent;
+        cursor: pointer;
+        font-weight: bold;
+        float: left;
+        display: block;
+    }
+
+    #house_view_cart_house_quantity_counter_div {
+        width: 50px;
+        background-color: #F6F7FB;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #000;
+        font-size: 19px;
+        font-weight: bold;
+    }
+
+    .house_view_cart_house_update_quantity_button:active {
+        color: #000 !important;
+        background-color: #f6f7fb !important;
+    }
+
+    .attribute_item_color_item {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) !important;
+    }
+
+    .attribute_item {
+        border: 2px solid #f6f7fb;
+        background: #fff;
+        padding: 5px 13px;
+        border-radius: 8px;
+        min-width: 44px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        font-weight: 500;
+        line-height: 24px;
+        margin: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .attribute_item_active {
+        border-color: #0058ff !important;
+    }
+
+    .house_view_house_container_of_price {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .house_view_price {
+        margin-bottom: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        justify-content: flex-start;
+        font-size: 1.7rem;
+        font-weight: 700;
+        line-height: 2rem;
+        color: #23d77d;
+    }
+
+    .house_view_house_price_without_discount {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+        font-size: 1.2rem;
+        line-height: 2.5rem;
+        font-weight: 500;
+        color: rgba(156, 163, 175, 1);
+        text-decoration-line: line-through;
+    }
+
+    #house_discount_span_in_main_image {
+        background-color: #0c82e3 !important;
+        padding: 4px;
+        border-radius: 50%;
+        width: 50px;
+        border: 2px solid #fff;
+        height: 50px;
+        color: #fff;
+        text-align: center;
+        margin-right: 6px;
+        position: absolute;
+        top: 13px;
+        right: 5px;
+        z-index: 999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #house_main_image {
+        height: 500px !important;
+        width: 100% !important;
+        border-radius: 7px;
+        object-fit: cover;
+        transition: all 0.2s;
+    }
+
+    #container_of_house_images {
+        max-width: 400px;
+        height: 130px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex: 1;
+        margin: 0px 10px;
+        overflow: hidden;
+        transition: all 0.2s;
+    }
+
+    #container_of_house_images_slider {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .house_slider_image {
+        height: 100px !important;
+        width: 90px !important;
+        min-width: 90px !important;
+        max-width: 90px !important;
+        border-radius: 5px;
+        object-fit: cover;
+        margin: 5px;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .house_slider_image_active {
+        border: 2px solid #0087fb;
+    }
+
+    .house_view_small_images_slider_arrow {
+        background-color: transparent;
+        outline: none;
+        min-width: 30px;
+        min-height: 30px;
+        max-width: 30px;
+        max-height: 30px;
+        transition: all 0.1s;
+        border: none;
+    }
+
+        .house_view_small_images_slider_arrow:active {
+            color: #0058ff;
+        }
+
+    .house_view_more_houses_slider_arrow {
+        background-color: transparent;
+        outline: none;
+        min-width: 30px;
+        min-height: 30px;
+        max-width: 30px;
+        max-height: 30px;
+        transition: all 0.1s;
+        border: none;
+    }
+
+        .house_view_more_houses_slider_arrow:active {
+            color: #0058ff;
+        }
+</style>

@@ -1,0 +1,172 @@
+﻿@model RealEstate.Models.User
+
+<!-- title -->
+<div class="bg-white align-items-center d-flex my-2 p-3" style="border-radius: 7px;">
+    <a asp-area="Customer" asp-controller="Home" asp-action="Index">Home</a>
+    <div class="separator"></div>
+    <span>Register</span>
+</div>
+
+<div class="container-fluid my-4">
+    <div class="row align-items-center bg-white" style="border-radius: 10px;" id="container_of_form_data">
+        <div class="col-xl-6 col-lg-6 col-12 p-3">
+            <h4 class="mb-2">Create your account now</h4>
+            <div class="row">
+                <div class="form-group mb-2 col-xl-6 col-lg-6 col-12">
+                    <label for="sign_up_name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="sign_up_name" autocomplete="off" name="Name" value="" with-booking-from-a-to-z-validate="true"
+                           booking-from-a-to-z-form-val-is-required="true"
+                           booking-from-a-to-z-form-val-max-length="255">
+                    <span class="input_error_message"></span>
+                </div>
+                <div class="form-group mb-2 col-xl-6 col-lg-6 col-12">
+                    <label for="sign_up_phone" class="form-label">Phone Number</label>
+                    <input type="number" class="form-control input_number" id="sign_up_phone" autocomplete="off" name="PhoneNumber" value=""
+                           with-booking-from-a-to-z-validate="true"
+                           booking-from-a-to-z-form-val-is-required="true"
+                           booking-from-a-to-z-form-val-validate-phone="true">
+                    <span class="input_error_message"></span>
+                </div>
+                <div class="form-group mb-2 col-xl-6 col-lg-6 col-12">
+                    <label for="sign_up_email" class="form-label">Email</label>
+                    <input type="text" class="form-control" id="sign_up_email" autocomplete="off" name="Email" value=""
+                           with-booking-from-a-to-z-validate="true"
+                           booking-from-a-to-z-form-val-is-required="true"
+                           booking-from-a-to-z-form-val-validate-email="true">
+                    <span class="input_error_message"></span>
+                </div>
+                <div class="form-group mb-2  col-xl-6 col-lg-6 col-12">
+                    <label for="sign_up_address" class="form-label">Address</label>
+                    <input type="text" class="form-control" id="sign_up_address" autocomplete="off" name="Address" value=""
+                           with-booking-from-a-to-z-validate="true"
+                           booking-from-a-to-z-form-val-is-required="true"
+                           booking-from-a-to-z-form-val-max-length="255">
+                    <span class="input_error_message"></span>
+                </div>
+                <div class="form-group mb-2 col-xl-6 col-lg-6 col-12">
+                    <label for="sign_up_password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="sign_up_password" autocomplete="new-password" name="Password" value=""
+                           with-booking-from-a-to-z-validate="true"
+                           booking-from-a-to-z-form-val-is-required="true"
+                           booking-from-a-to-z-form-val-validate-password="true">
+                    <span class="input_error_message"></span>
+                </div>
+                <div class="form-group mb-2 col-xl-6 col-lg-6 col-12">
+                    <label for="sign_up_password_confirm" class="form-label">Password Confirm</label>
+                    <input type="password" class="form-control" id="sign_up_password_confirm" autocomplete="off" name="PasswordConfirm" value=""
+                           with-booking-from-a-to-z-validate="true"
+                           booking-from-a-to-z-form-val-is-required="true"
+                           booking-from-a-to-z-form-val-validate-confirm-password="true">
+                    <span class="input_error_message"></span>
+                </div>
+                <div class="d-flex flex-column">
+                    <label>
+                        Account Type
+                    </label>
+                    <div class="d-flex mt-1">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="AccountType" id="AccountTypeCustomer" value="Customer" checked>
+                            <label class="form-check-label" for="AccountTypeCustomer">
+                                Customer
+                            </label>
+                        </div>
+                        <div class="form-check mx-2">
+                            <input class="form-check-input" type="radio" name="AccountType" id="AccountTypeProvider" value="Provider">
+                            <label class="form-check-label" for="AccountTypeProvider">
+                                Provider
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="btn-dragon w-100 color-9 mx-0 mb-2 mt-4" id="sign_up_submit">Create</button>
+        </div>
+
+        <div class="col-xl-6 col-lg-6 col-12">
+            <div class="d-flex justify-content-center">
+                <img src="@Url.Content("~/images/Register.gif")" alt="image" style="width: 100%;">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#preloader").hide();
+
+
+
+        $(document).on('click', '#sign_up_submit', function () {
+            /* check data */
+            let error_count = 0;
+            $("#container_of_form_data").find('input,select,textarea').each(function () {
+                const check_error_in_element = booking_from_a_to_z_validate_input_data(this);
+                if (check_error_in_element == false) {
+                    error_count++;
+                }
+            })
+
+            if (error_count == 0) {
+                const formData = new FormData();
+                const data = $("#container_of_form_data").find('input,select,textarea').getForm2obj();
+                Object.entries(data).forEach(([input_key, input_value]) => {
+                    formData.append(input_key, input_value);
+                });
+
+                $("#preloader").show();
+                $.ajax({
+                    url: "@Url.Action("Register")",
+                    type: 'POST',
+                    data: formData,
+                    dataType: 'json',
+                    processData: false,
+                    contentType: false,
+                    success: function (result) {
+                        $("#preloader").hide();
+                        if (result.success == true) {
+                            Swal.fire({
+                                confirmButtonText: 'Yes',
+                                icon: 'success',
+                                title: 'Register',
+                                text: 'Successfully',
+                            }).then(() => {
+                                window.location.href = "@Url.Action("Login")";
+                            })
+                        } else {
+                            Swal.fire({
+                                confirmButtonText: 'Yes',
+                                icon: 'error',
+                                title: 'Ops',
+                                text: result.message,
+                            })
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        $("#preloader").hide();
+                        Swal.fire({
+                            confirmButtonText: "Ok",
+                            icon: 'error',
+                            title: 'ops',
+                            text: 'an error has been identified in the provided information',
+                        });
+                    }
+                });
+            } else {
+                Swal.fire({
+                    confirmButtonText: 'Ok',
+                    icon: 'error',
+                    title: 'ops',
+                    text: 'an error has been identified in the provided information',
+                })
+            }
+        })
+    })
+</script>
+
+<style>
+    @@media only screen and (max-width: 1000px) {
+        #container_of_form_data {
+            flex-direction: column-reverse !important;
+        }
+    }
+</style>

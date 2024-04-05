@@ -1,0 +1,67 @@
+﻿<div class="align-items-center  d-flex flex-column justify-content-center w-100 my-5 p-0 primary_background_color" style="border-radius: 9px 9px 0px 0px;">
+    <h1 class="my-3 text-center" style="font-size: 46px;color: #fff;">
+        Properties
+    </h1>
+    <div class="bg-white shadow-sm table-responsive w-100 p-2">
+        <table class="table datatable">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Service Type</th>
+                    <th>Full Total</th>
+                    <th>Region</th>
+                    <th>City</th>
+                    <th>With Maintenance Contract</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (RealEstate.Models.Property.PropertyDataTableRowDataModal property in Model)
+                {
+                    <tr>
+                        <td>@property.Title</td>
+                        <td>@property.ServiceType </td>
+                        <td>@property.FullTotal </td>
+                        <td>@property.Region </td>
+                        <td>@property.City </td>
+                        <td>@property.WithMaintenanceContract </td>
+                        <td style="color:@(@property.StatusColor)">@property.Status </td>
+                        <td>
+                            <div class="d-flex ">
+                                <a asp-action="View" asp-route-id="@property.Id"><i class='fa-solid fa-eye btn-dragon color-9 btn-dragon-action mx-2'></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<style>
+    #example_filter {
+        display: flex !important;
+        justify-content: flex-end !important;
+    }
+
+    td img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+    }
+
+    td {
+        align-content: center;
+        align-items: center;
+    }
+
+    .dataTables_empty {
+        text-align: center;
+    }
+
+</style>
+<script>
+    $(document).ready(function () {
+        $("#preloader").hide();
+    });
+</script>

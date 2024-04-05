@@ -1,0 +1,252 @@
+﻿@model RealEstate.Models.Property
+<div class="justify-content-center row my-4 p-3">
+    <div class="bg-white col-12 p-3 shadow-sm" style="border-radius: 13px;">
+        <!-- ///////////////////// title /////////////////////// -->
+        <h1 class="text-center">View Property</h1>
+        <hr>
+        <div id="container_of_form_data" class="row">
+            <div class="col-xl-3 col-lg-3 col-12">
+                <label class="form-label" for="Title">Title</label>
+                <input type="text" for="Title" asp-for="Title" name="Title" class="form-control"
+                       disabled readonly>
+                <span class="input_error_message"></span>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-12">
+                <label class="form-label" for="PropertySize">Size</label>
+                <input type="text" for="PropertySize" asp-for="PropertySize" name="PropertySize" class="form-control"
+                       disabled readonly>
+                <span class="input_error_message"></span>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-12">
+                <label class="form-label" for="NumberOfFloors">Number Of Floors</label>
+                <input type="number" for="NumberOfFloors" asp-for="NumberOfFloors" name="NumberOfFloors" class="form-control"
+                       disabled readonly>
+                <span class="input_error_message"></span>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-12">
+                <label class="form-label" for="FloorNumber">Floor Number</label>
+                <input type="number" for="FloorNumber" asp-for="FloorNumber" name="FloorNumber" class="form-control"
+                       disabled readonly>
+                <span class="input_error_message"></span>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-12">
+                <label class="form-label" for="NumberOfRooms">Number Of Rooms</label>
+                <input type="number" for="NumberOfRooms" asp-for="NumberOfRooms" name="NumberOfRooms" class="form-control"
+                       disabled readonly>
+                <span class="input_error_message"></span>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-12">
+                <label class="form-label" for="NumberOfBathrooms">Number Of Bathrooms</label>
+                <input type="number" for="NumberOfBathrooms" asp-for="NumberOfBathrooms" name="NumberOfBathrooms" class="form-control"
+                       disabled readonly>
+                <span class="input_error_message"></span>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-12">
+                <label class="form-label" for="Type">Type</label>
+                <select for="Type" name="Type" asp-for="Type" class="form-control"
+                        disabled readonly>
+                    <option value="">Select</option>
+                    <option value="OrdinaryHouse">Ordinary House</option>
+                    <option value="Villa">Villa</option>
+                    <option value="InBuilding">In Building</option>
+                </select>
+                <span class="input_error_message"></span>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-12">
+                <label class="form-label" for="ServiceType">Service Type</label>
+                <select for="ServiceType" name="ServiceType" asp-for="ServiceType" class="form-control"
+                        disabled readonly>
+                    <option value="">Select</option>
+                    <option value="Rent">Rent</option>
+                    <option value="Sale">Sale</option>
+                </select>
+                <span class="input_error_message"></span>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-12">
+                <label class="form-label" for="Status">Status</label>
+                <select for="Status" name="Status" asp-for="Status" class="form-control"
+                        disabled readonly>
+                    <option value="">Select</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Confirmed">Confirmed</option>
+                    <option value="Canceled">Canceled</option>
+                </select>
+                <span class="input_error_message"></span>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-12">
+                <label class="form-label" name="WithMaintenanceContract" for="WithMaintenanceContract">With Maintenance Contract</label>
+                <select for="WithMaintenanceContract" asp-for="WithMaintenanceContract" class="form-control"
+                        disabled readonly>
+                    <option value="">Select</option>
+                    <option value="True">Yes</option>
+                    <option value="False">No</option>
+                </select>
+                <span class="input_error_message"></span>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-12">
+                <label class="form-label" for="Region">Region</label>
+                <select for="Region" id="region_select" asp-for="RegionId" name="Region" class="form-control"
+                        disabled readonly>
+                    <option value="">Select</option>
+                    <option value="2">Northern District</option>
+                    <option value="3">Central District</option>
+                    <option value="4">Southern District:</option>
+                    <option value="5">Eastern District</option>
+                    <option value="6">Jerusalem District</option>
+                    <option value="7">Tel Aviv District</option>
+                </select>
+                <span class="input_error_message"></span>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-12">
+                <label class="form-label" for="City">City</label>
+                <select for="City" id="city_select" asp-for="CityId" name="City" class="form-control"
+                        disabled readonly>
+                    <option value="">@ViewBag.CityTitle</option>
+                </select>
+                <span class="input_error_message"></span>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-12">
+                <label class="form-label" for="FullTotal">Full Total</label>
+                <input type="number" for="FullTotal" asp-for="FullTotal" name="FullTotal" class="form-control"
+                       disabled readonly>
+                <span class="input_error_message"></span>
+            </div>
+            <div class="mb-3">
+                <label for="Note" class="form-label">
+                    Note
+                </label>
+                <textarea class="form-control" asp-for="Note" id="Note" name="Note" cols="50"
+                          autocomplete="OFF" value="" style="resize: none;height: 180px;" placeholder=""
+                          disabled readonly></textarea>
+                <span class="input_error_message"></span>
+            </div>
+            <h5 class="form-label">Images</h5>
+            <!-- Dropzone start -->
+            <div class="dropzone-files-preview-container" data-files>
+                @foreach (RealEstateFile realestate_file_data in ViewBag.Documents)
+                {
+                    <div class="dropzone-file-preview-container">
+                        <img src="@realestate_file_data.Url" alt="image" class="dropzone-file-preview-image" />
+                    </div>
+                }
+            </div>
+            <!-- Dropzone end -->
+        </div>
+        <!-- /////////////////////////////////////////////////// -->
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#preloader").hide();
+    });
+</script>
+
+
+<style>
+    .dropzone {
+        margin-bottom: 1rem;
+        background-color: transparent !important;
+    }
+
+    .dropzone--actual {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 3rem;
+        border: .125rem dashed #5f5f5f94;
+        border-radius: .125rem;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .dropzone--actual__label {
+        margin-bottom: 0;
+    }
+
+        .dropzone--actual__label::after {
+            content: '';
+        }
+
+    .dropzone--actual__label--focused {
+        outline: 0;
+        box-shadow: 0 0 .0625rem .25rem #5e9ed6;
+    }
+
+    .dropzone--actual__file {
+        position: absolute;
+        left: -9999em;
+    }
+
+    .dropzone--actual__upload {
+        display: none;
+    }
+
+    .dropzone--dragover {
+        background-color: #ddd;
+    }
+
+    .dropzone__field {
+        width: 100%;
+        height: 145px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .dropzone__label {
+        cursor: pointer;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent !important;
+        color: #000 !important;
+        transition: all 0.3s ease-in-out;
+    }
+
+        .dropzone__label:hover {
+            color: #1D7773 !important;
+        }
+
+    .dropzone--actual:hover {
+        border-color: #1D7773 !important;
+    }
+
+    .dropzone-file-preview-container {
+        width: 200px;
+        height: 250px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        box-shadow: 0 .125rem .25rem rgba(0,0,0,.075) !important;
+        background-color: #fff;
+        padding: 1rem !important;
+        border-radius: 9px;
+        margin: 10px !important;
+    }
+
+    .dropzone-file-preview-image {
+        width: 100%;
+        height: 100%;
+        border-radius: 9px;
+        object-fit: cover;
+    }
+
+
+    .dropzone-file-preview-remove-button {
+        height: 31px !important;
+        border-radius: 5px !important;
+        margin: 0px !important;
+    }
+
+    .dropzone-files-preview-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 15px 0px;
+    }
+</style>

@@ -1,0 +1,133 @@
+﻿<!-- title -->
+<div class="bg-white align-items-center d-flex my-2 p-3" style="border-radius: 7px;">
+    <a asp-area="Customer" asp-controller="Home" asp-action="Index">Home</a>
+    <div class="separator"></div>
+    <span>Contact US</span>
+</div>
+
+<div class="container-fluid my-4">
+    <div class="row align-items-center bg-white" style="border-radius: 10px;" id="container_of_form_data">
+        <div class="col-xl-6 col-lg-6 col-12 p-3">
+            <h3 class="title mb--10">Contact Our Technical Support Team</h3>
+            <p>Our team is here to address and resolve any issues you may encounter. Whether you require immediate technical assistance or are seeking guidance on our products, we are here to help. Feel free to get in touch, and we'll be happy to provide assistance.</p>
+            <div class="form-group mb-2">
+                <label for="contact_us_name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="contact_us_name" autocomplete="off" name="Name" value=""
+                       with-booking-from-a-to-z-validate="true"
+                       booking-from-a-to-z-form-val-is-required="true"
+                       booking-from-a-to-z-form-val-max-length="255">
+                <span class="input_error_message"></span>
+            </div>
+            <div class="form-group mb-2">
+                <label for="contact_us_email" class="form-label">Email</label>
+                <input type="text" class="form-control" id="contact_us_email" autocomplete="off" name="Email" value=""
+                       with-booking-from-a-to-z-validate="true"
+                       booking-from-a-to-z-form-val-is-required="true"
+                       booking-from-a-to-z-form-val-validate-email="true">
+                <span class="input_error_message"></span>
+            </div>
+            <div class="form-group mb-2">
+                <label for="contact_us_subject" class="form-label">Subject</label>
+                <input type="text" class="form-control" id="contact_us_subject" autocomplete="off" name="Subject" value=""
+                       with-booking-from-a-to-z-validate="true"
+                       booking-from-a-to-z-form-val-is-required="true"
+                       booking-from-a-to-z-form-val-max-length="255">
+                <span class="input_error_message"></span>
+            </div>
+            <div class="form-group mb-2">
+                <label for="contact_us_message" class="form-label">Type your message</label>
+                <textarea class="form-control" name="Message" id="contact_us_message" cols="1" rows="5"
+                          with-booking-from-a-to-z-validate="true"
+                          booking-from-a-to-z-form-val-is-required="true"
+                          booking-from-a-to-z-form-val-max-length="255"></textarea>
+                <span class="input_error_message"></span>
+            </div>
+            <button type="button" class="btn-dragon w-100 color-9 mx-0 mb-2 mt-4" id="contact_us_submit">Send Message</button>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-12">
+            <div class="tp-login-thumb login-space sky-bg d-flex justify-content-center">
+                <img src="@Url.Content("~/images/ContactUs.gif")" alt="image" style="width: 100%;">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#preloader").hide();
+
+
+        $(document).on('click', '#contact_us_submit', function () {
+            /* check data */
+            let error_count = 0;
+            $("#container_of_form_data").find('input,select,textarea').each(function () {
+                const check_error_in_element = booking_from_a_to_z_validate_input_data(this);
+                if (check_error_in_element == false) {
+                    error_count++;
+                }
+            })
+
+            if (error_count == 0) {
+                const formData = new FormData();
+                const data = $("#container_of_form_data").find('input,select,textarea').getForm2obj();
+                Object.entries(data).forEach(([input_key, input_value]) => {
+                    formData.append(input_key, input_value);
+                });
+
+                $("#preloader").show();
+                $.ajax({
+                    url: "@Url.Action("Action")",
+                    type: 'POST',
+                    data: formData,
+                    dataType: 'json',
+                    processData: false,
+                    contentType: false,
+                    success: function (result) {
+                        $("#preloader").hide();
+                        if (result.result == true) {
+                            Swal.fire({
+                                icon: 'success',
+                                confirmButtonText: 'Ok',
+                                title: 'Send Contact Us',
+                                text: "Successfully",
+                            }).then(() => {
+                                location.reload();
+                            })
+                        } else {
+                            Swal.fire({
+                                confirmButtonText: 'Ok',
+                                icon: 'error',
+                                title: 'ops',
+                                text: result.message,
+                            })
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        $("#preloader").hide();
+                        Swal.fire({
+                            confirmButtonText: "Ok",
+                            icon: 'error',
+                            title: 'ops',
+                            text: 'an error has been identified in the provided information',
+                        });
+                    }
+                });
+            } else {
+                Swal.fire({
+                    confirmButtonText: 'Ok',
+                    icon: 'error',
+                    title: 'ops',
+                    text: 'an error has been identified in the provided information',
+                })
+            }
+        })
+    })
+</script>
+
+<style>
+    @@media only screen and (max-width: 1000px) {
+        #container_of_form_data {
+            flex-direction: column-reverse !important;
+        }
+    }
+</style>

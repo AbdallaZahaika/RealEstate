@@ -1,0 +1,129 @@
+﻿@model RealEstate.Models.User
+
+<div class="justify-content-center row my-4">
+    <div class="bg-white col-12 col-lg-4 col-md-8 col-xl-4 p-3 shadow-sm" style="border-radius: 13px;">
+        <!-- ///////////////////// title /////////////////////// -->
+        <h1 class="text-center">Edit Customer</h1>
+        <hr>
+        <form id="container_of_form_data">
+            <div class="mb-3">
+                <label class="form-label" asp-for="Name"></label>
+                <input type="text" asp-for="Name" class="form-control"
+                       with-booking-from-a-to-z-validate="true"
+                       booking-from-a-to-z-form-val-is-required="true"
+                       booking-from-a-to-z-form-val-max-length="255">
+                <span class="input_error_message"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" asp-for="Email"></label>
+                <input type="text" asp-for="Email" class="form-control"
+                       with-booking-from-a-to-z-validate="true"
+                       booking-from-a-to-z-form-val-is-required="true"
+                       booking-from-a-to-z-form-val-validate-email="true">
+                <span class="input_error_message"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" asp-for="PhoneNumber"></label>
+                <input type="tel" asp-for="PhoneNumber" class="form-control"
+                       with-booking-from-a-to-z-validate="true"
+                       booking-from-a-to-z-form-val-is-required="true"
+                       booking-from-a-to-z-form-val-validate-phone="true">
+                <span class="input_error_message"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" asp-for="Address"></label>
+                <input type="text" asp-for="Address" class="form-control"
+                       with-booking-from-a-to-z-validate="true"
+                       booking-from-a-to-z-form-val-is-required="true"
+                       booking-from-a-to-z-form-val-max-length="255">
+                <span class="input_error_message"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">New Password</label>
+                <input type="password" asp-for="Password" autocomplete="new-password" value="" class="form-control"
+                       with-booking-from-a-to-z-validate="true"
+                       booking-from-a-to-z-form-val-validate-password="true">
+                <span class="input_error_message"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" asp-for="Status"></label>
+                <select asp-for="Status" class="form-control" with-booking-from-a-to-z-validate="true" booking-from-a-to-z-form-val-is-required="true">
+                    <option value="Active">Active</option>
+                    <option value="Block">Block</option>
+                    <option value="UnActive">UnActive</option>
+                </select>
+                <span class="input_error_message"></span>
+            </div>
+            <button type="button" class="btn-dragon color-9 w-100 m-0 my-2" id="update_submit">Edit</button>
+        </form>
+        <!-- /////////////////////////////////////////////////// -->
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#preloader").hide();
+
+        $(document).on('click', '#update_submit', function () {
+            /* check data */
+            let error_count = 0;
+            $("#container_of_form_data").find('input,select,textarea').each(function () {
+                const check_error_in_element = booking_from_a_to_z_validate_input_data(this);
+                if (check_error_in_element == false) {
+                    error_count++;
+                }
+            })
+
+            if (error_count == 0) {
+                const formData = new FormData($('#container_of_form_data')[0]);
+
+                $("#preloader").show();
+                $.ajax({
+                    url: "@Url.Action("Edit")",
+                    type: 'POST',
+                    data: formData,
+                    dataType: 'json',
+                    processData: false,
+                    contentType: false,
+                    success: function (result) {
+                        $("#preloader").hide();
+                        if (result.success == true) {
+                            Swal.fire({
+                                confirmButtonText: 'Yes',
+                                icon: 'success',
+                                title: 'Edit Customer',
+                                text: 'Updated Successfully',
+                            }).then(() => {
+                                window.location.href = "@Url.Action("Index")";
+                            })
+                        } else {
+                            Swal.fire({
+                                confirmButtonText: 'Yes',
+                                icon: 'error',
+                                title: 'Ops',
+                                text: result.message,
+                            })
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        $("#preloader").hide();
+                        Swal.fire({
+                            confirmButtonText: "Ok",
+                            icon: 'error',
+                            title: 'ops',
+                            text: 'an error has been identified in the provided information',
+                        });
+                    }
+                });
+            } else {
+                Swal.fire({
+                    confirmButtonText: 'Ok',
+                    icon: 'error',
+                    title: 'ops',
+                    text: 'an error has been identified in the provided information',
+                })
+            }
+        })
+
+    });
+</script>

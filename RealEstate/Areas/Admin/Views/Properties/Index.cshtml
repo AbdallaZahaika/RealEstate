@@ -1,0 +1,114 @@
+﻿<div class="align-items-center  d-flex flex-column justify-content-center w-100 my-5 p-0 primary_background_color" style="border-radius: 9px 9px 0px 0px;">
+    <h1 class="my-3 text-center" style="font-size: 46px;color: #fff;">
+        Properties
+    </h1>
+    <a asp-action="New">
+        <button class="btn-dragon color-5">New Property</button>
+    </a>
+    <div class="bg-white shadow-sm table-responsive w-100 p-2">
+        <table class="table datatable">
+            <thead>
+                <tr>
+                    <th>Owner Type</th>
+                    <th>Owner Name</th>
+                    <th>Title</th>
+                    <th>Service Type</th>
+                    <th>Full Total</th>
+                    <th>Region</th>
+                    <th>City</th>
+                    <th>With Maintenance Contract</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (RealEstate.Models.Property.PropertyDataTableRowDataModal property in Model)
+                {
+                    <tr>
+                        <td>@property.OwnerType</td>
+                        <td>@property.OwnerName</td>
+                        <td>@property.Title</td>
+                        <td>@property.ServiceType </td>
+                        <td>@property.FullTotal </td>
+                        <td>@property.Region </td>
+                        <td>@property.City </td>
+                        <td>@property.WithMaintenanceContract </td>
+                        <td style="color:@(@property.StatusColor)">@property.Status </td>
+                        <td>
+                            <div class="d-flex ">
+                                <a asp-action="Edit" asp-route-id="@property.Id"><i class='fa-solid fa-edit btn-dragon color-1 btn-dragon-action mx-2'></i></a>
+                                <i class='fa-solid fa-trash btn-dragon color-11 btn-dragon-action delete_button' rel-pm-si="@property.Id"></i>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<style>
+    #example_filter {
+        display: flex !important;
+        justify-content: flex-end !important;
+    }
+
+    td img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+    }
+
+    td {
+        align-content: center;
+        align-items: center;
+    }
+
+    .dataTables_empty {
+        text-align: center;
+    }
+
+</style>
+<script>
+    $(document).ready(function () {
+        $("#preloader").hide();
+        $(".delete_button").on("click", function () {
+            var categoryId = $(this).attr("rel-pm-si");
+            Swal.fire({
+                title: 'Are you sure?',
+                text: 'You won\'t be able to revert this!',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: '@Url.Action("Delete")',
+                        type: 'POST',
+                        data: { id: categoryId },
+                        success: function (result) {
+                            Swal.fire({
+                                icon: 'success',
+                                text: result.message,
+                                confirmButtonText: 'OK'
+                            }).then(() => {
+                                window.location.reload();
+                            });
+                        },
+                        error: function () {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Ops',
+                                text: 'An error occurred during the request.',
+                                confirmButtonText: 'OK'
+                            });
+                        }
+                    });
+                }
+            });
+        });
+
+
+    });
+</script>

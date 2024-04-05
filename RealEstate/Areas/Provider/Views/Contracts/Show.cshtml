@@ -1,0 +1,197 @@
+﻿@model RealEstate.Models.Contract
+<div class="justify-content-center row my-4 p-3">
+    <div class="bg-white col-12 p-3 shadow-sm" style="border-radius: 13px;">
+        <h1 class="text-center">View Contract</h1>
+        <hr>
+        <div id="container_of_form_data" class="row">
+            <div class="col-xl-3 col-lg-3 col-12">
+                <label class="form-label" for="Property">Property</label>
+                <input type="text" for="Property" name="Property" value="@ViewBag.Property" class="form-control"
+                       disabled readonly>
+                <span class="input_error_message"></span>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-12">
+                <label class="form-label" for="Provider">Provider</label>
+                <input type="text" for="Provider" value="@ViewBag.Provider" name="Provider" class="form-control"
+                       disabled readonly>
+                <span class="input_error_message"></span>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-12">
+                <label class="form-label" for="Provider">Customer</label>
+                <input type="text" for="Customer" value="@ViewBag.Customer" name="Customer" class="form-control"
+                       disabled readonly>
+                <span class="input_error_message"></span>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-12">
+                <label class="form-label" asp-for="Type">Type</label>
+                <input type="text" asp-for="Type" name="Type" class="form-control"
+                       disabled readonly>
+                <span class="input_error_message"></span>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-12">
+                <label class="form-label" asp-for="FromDate">From Date</label>
+                <input type="date" asp-for="FromDate" name="FromDate" class="form-control"
+                       disabled readonly>
+                <span class="input_error_message"></span>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-12">
+                <label class="form-label" asp-for="ToDate">To Date</label>
+                <input type="date" asp-for="ToDate" name="ToDate" class="form-control"
+                       disabled readonly>
+                <span class="input_error_message"></span>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-12">
+                <label class="form-label" asp-for="FullTotal">Full Total</label>
+                <input type="number" asp-for="FullTotal" name="FullTotal" class="form-control"
+                       disabled readonly>
+                <span class="input_error_message"></span>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-12">
+                <label class="form-label" asp-for="Status">Status</label>
+                <select asp-for="Status" name="Status" class="form-control"
+                        disabled readonly>
+                    <option value="">Select</option>
+                    <option value="Pending">Pending</option>
+                    <option value="InProcessing">InProcessing</option>
+                    <option value="Done">Done</option>
+                    <option value="Canceled">Canceled</option>
+                </select>
+                <span class="input_error_message"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Note" class="form-label">
+                    Note
+                </label>
+                <textarea class="form-control" id="Note" name="Note" cols="50" asp-for="Note"
+                          autocomplete="OFF" value="" style="resize: none;height: 180px;" placeholder=""
+                          disabled readonly></textarea>
+                <span class="input_error_message"></span>
+            </div>
+            <h5 class="form-label">Images</h5>
+            <!-- Dropzone start -->
+            <div class="dropzone-files-preview-container" data-files>
+                @foreach (RealEstateFile realestate_file_data in ViewBag.Documents)
+                {
+                    <div class="dropzone-file-preview-container">
+                        <img src="@realestate_file_data.Url" alt="image" class="dropzone-file-preview-image" />
+                    </div>
+                }
+            </div>
+            <!-- Dropzone end -->
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#preloader").hide();
+    });
+</script>
+
+<style>
+    .dropzone {
+        margin-bottom: 1rem;
+        background-color: transparent !important;
+    }
+
+    .dropzone--actual {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 3rem;
+        border: .125rem dashed #5f5f5f94;
+        border-radius: .125rem;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .dropzone--actual__label {
+        margin-bottom: 0;
+    }
+
+        .dropzone--actual__label::after {
+            content: '';
+        }
+
+    .dropzone--actual__label--focused {
+        outline: 0;
+        box-shadow: 0 0 .0625rem .25rem #5e9ed6;
+    }
+
+    .dropzone--actual__file {
+        position: absolute;
+        left: -9999em;
+    }
+
+    .dropzone--actual__upload {
+        display: none;
+    }
+
+    .dropzone--dragover {
+        background-color: #ddd;
+    }
+
+    .dropzone__field {
+        width: 100%;
+        height: 141px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .dropzone__label {
+        cursor: pointer;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent !important;
+        color: #000 !important;
+        transition: all 0.3s ease-in-out;
+    }
+
+        .dropzone__label:hover {
+            color: #1D7773 !important;
+        }
+
+    .dropzone--actual:hover {
+        border-color: #1D7773 !important;
+    }
+
+    .dropzone-file-preview-container {
+        width: 200px;
+        height: 250px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        box-shadow: 0 .125rem .25rem rgba(0,0,0,.075) !important;
+        background-color: #fff;
+        padding: 1rem !important;
+        border-radius: 9px;
+        margin: 10px !important;
+    }
+
+    .dropzone-file-preview-image {
+        width: 100%;
+        height: 100%;
+        border-radius: 9px;
+        object-fit: cover;
+    }
+
+
+    .dropzone-file-preview-remove-button {
+        height: 31px !important;
+        border-radius: 5px !important;
+        margin: 0px !important;
+    }
+
+    .dropzone-files-preview-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 15px 0px;
+    }
+</style>

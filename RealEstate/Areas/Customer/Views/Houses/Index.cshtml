@@ -1,0 +1,223 @@
+﻿@model List<RealEstate.Models.Property.PropertyDataTableRowDataModal>
+<!-- title -->
+<div class="bg-white align-items-center d-flex my-2 p-3" style="border-radius: 7px;">
+    <a asp-area="Customer" asp-controller="Home" asp-action="Index">Home</a>
+    <div class="separator"></div>
+    <span>Houses</span>
+    <div class="separator"></div>
+    <span>@ViewBag.ServiceType</span>
+</div>
+
+<!-- title -->
+<div class="bg-white row mx-0 my-2 p-3" style="border-radius: 7px;">
+    <h4 class="w-100">Filters</h4>
+    <div class="col-xl-3 col-lg-3 col-12 my-3">
+        <label class="form-label" for="Region">Region</label>
+        <select for="Region" id="region_select" name="Region" class="form-control">
+            <option value="">Select</option>
+            <option value="2">Northern District</option>
+            <option value="3">Central District</option>
+            <option value="4">Southern District:</option>
+            <option value="5">Eastern District</option>
+            <option value="6">Jerusalem District</option>
+            <option value="7">Tel Aviv District</option>
+        </select>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-12  my-3">
+        <label class="form-label" for="City">City</label>
+        <select for="City" id="city_select" name="City" class="form-control">
+        </select>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-12 my-3">
+        <label class="form-label" for="NumberOfRooms">Number Of Rooms</label>
+        <select for="Region" id="number_of_rooms_select" name="NumberOfRooms" class="form-control">
+            <option value="">Select</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+        </select>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-12 my-3">
+        <label class="form-label" for="Type">Type</label>
+        <select id="type_select" name="Type" class="form-control">
+            <option value="" selected>Select</option>
+            <option value="OrdinaryHouse">Ordinary House</option>
+            <option value="Villa">Villa</option>
+            <option value="InBuilding">In Building</option>
+        </select>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-12  my-3">
+        <label class="form-label" for="MinPrice">Min Price</label>
+        <input type="number" id="min_price_input" name="NumberOfRooms" class="form-control">
+    </div>
+    <div class="col-xl-3 col-lg-3 col-12 my-3">
+        <label class="form-label" for="MaxPrice">Max Price</label>
+        <input type="number" id="max_price_input" name="MaxPrice" class="form-control">
+    </div>
+
+    <div class="m-3" style="width:300px;">
+        <button type="button" class="btn-dragon color-11 w-100 m-0" style="margin-top: 29px !important;" id="rest_filters_button">Rest Filters</button>
+    </div>
+</div>
+
+
+<div class="d-flex justify-content-center align-items-start w-100 flex-wrap">
+    @if (Model != null && Model.Any())
+    {
+        @foreach (Property.PropertyDataTableRowDataModal RentProperty in Model)
+        {
+            <a asp-area="Customer" asp-controller="Houses" asp-action="Show" asp-route-id="@RentProperty.Id" class="property-card-container">
+                @if (RentProperty.IsHotDeal == true)
+                {
+                    <div class="property-card-hot-deal"><i class="fa-solid fa-fire"></i></div>
+                }
+                <div class="property-card-image" style="background-image:url(@RentProperty.MainImage)"></div>
+                <div class="p-2">
+                    <h5 class="property-card-title">@RentProperty.Title</h5>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h6><i class="fa-solid fa-house-circle-exclamation"></i> Type:@RentProperty.Type</h6>
+                        <h6><i class="fa-solid fa-maximize"></i> Size:@(RentProperty.PropertySize)M</h6>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h6><i class="fa-solid fa-person-booth"></i> Rooms:@RentProperty.NumberOfRooms</h6>
+                        <h6><i class="fa-solid fa-toilet"></i> Bathrooms:@RentProperty.NumberOfBathrooms</h6>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center">
+                            <h6><i class="fa-solid fa-city"></i> @RentProperty.Region</h6>
+                            <h6 class="mx-2">|</h6>
+                            <h6><i class="fa-solid fa-tree-city"></i> @RentProperty.City</h6>
+                        </div>
+                        <h4 class="property-card-price">₪@RentProperty.FullTotal</h4>
+                    </div>
+                </div>
+            </a>
+        }
+    }
+    else
+    {
+        <div class="w-100 align-items-center d-flex justify-content-center">
+            <div class="my-4 bg-white align-items-center d-flex justify-content-center p-3" style="border-radius: 17px;min-height: 102px;min-width:400px">
+                <i class="fa-solid fa-magnifying-glass" style="font-size: 20px;"></i>
+                <h4 class="text-center mx-2">There is no information</h4>
+                <i class="fa-solid fa-face-sad-tear" style="font-size: 20px;color:red"></i>
+            </div>
+        </div>
+    }
+</div>
+<!-- rents end -->
+
+<script>
+    $(document).ready(function () {
+        setTimeout(() => {
+            $("#region_select").val("@ViewBag.SelectedRegionId");
+            $("#type_select").val("@ViewBag.SelectedType");
+            $("#min_price_input").val("@ViewBag.SelectedMinPrice");
+            $("#max_price_input").val("@ViewBag.SelectedMaxPrice");
+            $("#number_of_rooms_select").val("@ViewBag.SelectedNumberOfRooms");
+            $('#city_select').append(`<option value="@Html.Raw(ViewBag.SelectedCityId)" selected>@Html.Raw(ViewBag.SelectedCityTitle)</option>`);
+            $("#preloader").hide();
+        }, 500)
+
+        $('#city_select').select2({
+            theme: 'bootstrap4',
+            placeholder: 'nothing selected',
+            selectOnClose: false,
+            ajax: {
+                dataType: "json",
+                url: "@Url.Action("GetCities", "Ajax")",
+                data: function (params) {
+                    return {
+                        term: params.term,
+                        regionId: $("#region_select").val()
+                    };
+                },
+            },
+            language: {
+                noResults: function () {
+                    return 'start typing';
+                },
+            },
+        });
+
+        const update_url = () => {
+            const city = $("#city_select").val();
+            const region = $("#region_select").val();
+            const min_price = $("#min_price_input").val();
+            const max_price = $("#max_price_input").val();
+            const number_of_rooms = $("#number_of_rooms_select").val();
+            const type = $("#type_select").val();
+            const service_type = "@ViewBag.ServiceType";
+
+            var baseUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+            let new_url = `${baseUrl}?service_type=${service_type}`
+            if (city) {
+                new_url += `&cityId=${city}`;
+            }
+            if (region) {
+                new_url += `&regionId=${region}`;
+            }
+
+            if (!isNaN(min_price) && min_price > 0) {
+                new_url += `&minPrice=${min_price}`;
+            }
+
+            if (!isNaN(max_price) && max_price > 0) {
+                if (max_price >= min_price) {
+                    new_url += `&maxPrice=${max_price}`;
+                } else {
+                    $("#max_price_input").val(min_price)
+                    new_url += `&maxPrice=${min_price}`;
+                }
+            }
+
+            if (!isNaN(number_of_rooms) && number_of_rooms > 0) {
+                new_url += `&numberOfRooms=${number_of_rooms}`;
+            }
+            if (type) {
+                new_url += `&propertytype=${type}`;
+            }
+
+            window.location.href = new_url;
+        }
+
+        $(document).on('change', '#city_select', function () {
+            const value = $(this).val();
+            if (value) {
+                update_url();
+            }
+        })
+
+        $(document).on('change', '#region_select', function () {
+            $("#city_select").val(null).change();
+            update_url();
+        })
+
+
+        $(document).on('change', '#number_of_rooms_select,#type_select,#min_price_input,#max_price_input', function () {
+            update_url();
+        })
+
+
+        $(document).on('click', '#rest_filters_button', function () {
+            $("#region_select").val(null).change();
+        })
+    })
+</script>

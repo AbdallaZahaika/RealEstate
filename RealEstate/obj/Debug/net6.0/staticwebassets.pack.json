@@ -1,0 +1,649 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\RealEstate.bundle.scp.css",
+      "PackagePath": "staticwebassets\\RealEstate.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\ContactUs.gif",
+      "PackagePath": "staticwebassets\\images\\ContactUs.gif"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\Contracts\\20240403160339540_c94d16d7ebd84d25a54773357f208151.jpeg",
+      "PackagePath": "staticwebassets\\images\\Contracts\\20240403160339540_c94d16d7ebd84d25a54773357f208151.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\Contracts\\20240403160339558_ea531e3a10c4448192489e21df0317d2.jpeg",
+      "PackagePath": "staticwebassets\\images\\Contracts\\20240403160339558_ea531e3a10c4448192489e21df0317d2.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\Contracts\\20240403160339579_d43656381da647c395aa407884736dcc.jpg",
+      "PackagePath": "staticwebassets\\images\\Contracts\\20240403160339579_d43656381da647c395aa407884736dcc.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\Contracts\\20240403160339601_65bc0311f4ba4d1c8f546ab633033295.jpg",
+      "PackagePath": "staticwebassets\\images\\Contracts\\20240403160339601_65bc0311f4ba4d1c8f546ab633033295.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\Contracts\\20240403162021366_d486704570f84cc98827cab2bd83bade.jpg",
+      "PackagePath": "staticwebassets\\images\\Contracts\\20240403162021366_d486704570f84cc98827cab2bd83bade.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\Contracts\\20240403230757951_e22696ee0a8e4502a42cfbdc1a17a7a8.jpg",
+      "PackagePath": "staticwebassets\\images\\Contracts\\20240403230757951_e22696ee0a8e4502a42cfbdc1a17a7a8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\Contracts\\20240404232554158_95cc4f8c602b42639b819ff5dfd77fd7.jpg",
+      "PackagePath": "staticwebassets\\images\\Contracts\\20240404232554158_95cc4f8c602b42639b819ff5dfd77fd7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\Login.gif",
+      "PackagePath": "staticwebassets\\images\\Login.gif"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\NewLogo.png",
+      "PackagePath": "staticwebassets\\images\\NewLogo.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\Profile.gif",
+      "PackagePath": "staticwebassets\\images\\Profile.gif"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\Register.gif",
+      "PackagePath": "staticwebassets\\images\\Register.gif"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\login.png",
+      "PackagePath": "staticwebassets\\images\\login.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\maintenanceContracts\\20240402040405776_b9f102ea8aed410c91d4a762f2b3cfca.png",
+      "PackagePath": "staticwebassets\\images\\maintenanceContracts\\20240402040405776_b9f102ea8aed410c91d4a762f2b3cfca.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\maintenanceContracts\\20240402040413949_0e0f0baeec4046aa83b62f2f67739d51.png",
+      "PackagePath": "staticwebassets\\images\\maintenanceContracts\\20240402040413949_0e0f0baeec4046aa83b62f2f67739d51.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\maintenanceContracts\\20240402040418702_922b1bb59b154c47ae3adbae59707db5.png",
+      "PackagePath": "staticwebassets\\images\\maintenanceContracts\\20240402040418702_922b1bb59b154c47ae3adbae59707db5.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\maintenanceContracts\\20240402040428302_97bd6326f63d485d91127c78d225e294.png",
+      "PackagePath": "staticwebassets\\images\\maintenanceContracts\\20240402040428302_97bd6326f63d485d91127c78d225e294.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\maintenanceContracts\\20240402044851911_496eb1c4c8964e06be1d26c64ee11ab3.png",
+      "PackagePath": "staticwebassets\\images\\maintenanceContracts\\20240402044851911_496eb1c4c8964e06be1d26c64ee11ab3.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\maintenanceContracts\\20240402044851919_619a3fbe5ae3442794307cf8e8d4a83e.png",
+      "PackagePath": "staticwebassets\\images\\maintenanceContracts\\20240402044851919_619a3fbe5ae3442794307cf8e8d4a83e.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\maintenanceContracts\\20240402044851920_e57b2fefa9784ca5b1ac9226e9352ee9.png",
+      "PackagePath": "staticwebassets\\images\\maintenanceContracts\\20240402044851920_e57b2fefa9784ca5b1ac9226e9352ee9.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\maintenanceContracts\\20240402044851923_b10e58b9df30462b916beb86fdbf5105.png",
+      "PackagePath": "staticwebassets\\images\\maintenanceContracts\\20240402044851923_b10e58b9df30462b916beb86fdbf5105.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\maintenanceContracts\\20240402044914841_73ee6e7fbfba437bbdf00f5f4888bcbc.png",
+      "PackagePath": "staticwebassets\\images\\maintenanceContracts\\20240402044914841_73ee6e7fbfba437bbdf00f5f4888bcbc.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\maintenanceContracts\\20240402044914842_9d08ae3c484e4f48b8f884a209689ff6.png",
+      "PackagePath": "staticwebassets\\images\\maintenanceContracts\\20240402044914842_9d08ae3c484e4f48b8f884a209689ff6.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\maintenanceContracts\\20240402044914845_69ad3d3107e94ff98f81380f1555499a.png",
+      "PackagePath": "staticwebassets\\images\\maintenanceContracts\\20240402044914845_69ad3d3107e94ff98f81380f1555499a.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\maintenanceContracts\\20240402044914847_3874a017041a483ea80b681f767221a0.png",
+      "PackagePath": "staticwebassets\\images\\maintenanceContracts\\20240402044914847_3874a017041a483ea80b681f767221a0.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\maintenanceContracts\\20240402071455790_f09b4ffe01a748d59833bdb93f8e735f.png",
+      "PackagePath": "staticwebassets\\images\\maintenanceContracts\\20240402071455790_f09b4ffe01a748d59833bdb93f8e735f.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\maintenanceContracts\\20240402071455795_80d017c8a3074f9197d9e34099d1083c.png",
+      "PackagePath": "staticwebassets\\images\\maintenanceContracts\\20240402071455795_80d017c8a3074f9197d9e34099d1083c.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\maintenanceContracts\\20240402071455796_31bf1dba40764f5f863574e2a4c7f244.png",
+      "PackagePath": "staticwebassets\\images\\maintenanceContracts\\20240402071455796_31bf1dba40764f5f863574e2a4c7f244.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\maintenanceContracts\\20240402071455797_f45df8a046f04edda5988faa9b968ea5.png",
+      "PackagePath": "staticwebassets\\images\\maintenanceContracts\\20240402071455797_f45df8a046f04edda5988faa9b968ea5.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\maintenanceContracts\\20240402071455799_4cd9aa00de0b4c6ebe1f58f4da82d8e1.png",
+      "PackagePath": "staticwebassets\\images\\maintenanceContracts\\20240402071455799_4cd9aa00de0b4c6ebe1f58f4da82d8e1.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\masterCard.png",
+      "PackagePath": "staticwebassets\\images\\masterCard.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240402045655602_266a5952845c47e0a6c4c93804c17237.png",
+      "PackagePath": "staticwebassets\\images\\properties\\20240402045655602_266a5952845c47e0a6c4c93804c17237.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240402045655608_6cf4da92137d474f9e5c7f65008f8967.png",
+      "PackagePath": "staticwebassets\\images\\properties\\20240402045655608_6cf4da92137d474f9e5c7f65008f8967.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240402045655609_116cfd4cf0dc4404bf8721d312d56bfa.png",
+      "PackagePath": "staticwebassets\\images\\properties\\20240402045655609_116cfd4cf0dc4404bf8721d312d56bfa.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240402045655609_2b89d25f033a4c1895ecb3e9c224a8ea.png",
+      "PackagePath": "staticwebassets\\images\\properties\\20240402045655609_2b89d25f033a4c1895ecb3e9c224a8ea.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240402045902362_b1d5f2dc13f742a480fc4e1759e31fce.png",
+      "PackagePath": "staticwebassets\\images\\properties\\20240402045902362_b1d5f2dc13f742a480fc4e1759e31fce.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240402045902369_cca6af90b7bc4500912bf039555a9236.png",
+      "PackagePath": "staticwebassets\\images\\properties\\20240402045902369_cca6af90b7bc4500912bf039555a9236.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240402045902369_d6f91d4a89884ad7b35508ec8ca2c0a7.png",
+      "PackagePath": "staticwebassets\\images\\properties\\20240402045902369_d6f91d4a89884ad7b35508ec8ca2c0a7.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240402045902370_d7e2f77268fd427786f5ff67ab2ec204.png",
+      "PackagePath": "staticwebassets\\images\\properties\\20240402045902370_d7e2f77268fd427786f5ff67ab2ec204.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240402045940516_ed14f14b8c9b489794dd3378f4ace467.png",
+      "PackagePath": "staticwebassets\\images\\properties\\20240402045940516_ed14f14b8c9b489794dd3378f4ace467.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240402045940518_6fa9b27dfeac46d1bfae640ecba2f6d6.png",
+      "PackagePath": "staticwebassets\\images\\properties\\20240402045940518_6fa9b27dfeac46d1bfae640ecba2f6d6.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240402045940519_5c843561ca40413b823701d3c4f609db.png",
+      "PackagePath": "staticwebassets\\images\\properties\\20240402045940519_5c843561ca40413b823701d3c4f609db.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240402045940519_7e142af0afa94ef497b28b5c4bf03ee4.png",
+      "PackagePath": "staticwebassets\\images\\properties\\20240402045940519_7e142af0afa94ef497b28b5c4bf03ee4.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240402045940519_ddce9e5bb653439eb2512ac5589bddaa.png",
+      "PackagePath": "staticwebassets\\images\\properties\\20240402045940519_ddce9e5bb653439eb2512ac5589bddaa.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240402061345646_cd5aa86bee2047ada711dbcc5b9d2f1d.png",
+      "PackagePath": "staticwebassets\\images\\properties\\20240402061345646_cd5aa86bee2047ada711dbcc5b9d2f1d.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240402061345653_658c5d77e0e4430f908d0a10f1ac2315.png",
+      "PackagePath": "staticwebassets\\images\\properties\\20240402061345653_658c5d77e0e4430f908d0a10f1ac2315.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240402061345654_5a367eb10be54dc1954ffbbcebf95df8.png",
+      "PackagePath": "staticwebassets\\images\\properties\\20240402061345654_5a367eb10be54dc1954ffbbcebf95df8.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240402061345654_efb96816572e46fdb6e0d6c0abae3ee1.png",
+      "PackagePath": "staticwebassets\\images\\properties\\20240402061345654_efb96816572e46fdb6e0d6c0abae3ee1.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240402061345655_1686eb67922b4a9280a9c67bc608ab0c.png",
+      "PackagePath": "staticwebassets\\images\\properties\\20240402061345655_1686eb67922b4a9280a9c67bc608ab0c.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240402061443038_683cbe97b28b482bb5661ac3549e3f54.png",
+      "PackagePath": "staticwebassets\\images\\properties\\20240402061443038_683cbe97b28b482bb5661ac3549e3f54.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240402061443040_11a29de04ea641c3832252aff299fc9f.png",
+      "PackagePath": "staticwebassets\\images\\properties\\20240402061443040_11a29de04ea641c3832252aff299fc9f.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240402061601766_ca3d9266570745e7af8b975fdf9e2229.png",
+      "PackagePath": "staticwebassets\\images\\properties\\20240402061601766_ca3d9266570745e7af8b975fdf9e2229.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240402061655508_f16aaeeef92248c1868d7bc6721503a4.png",
+      "PackagePath": "staticwebassets\\images\\properties\\20240402061655508_f16aaeeef92248c1868d7bc6721503a4.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240402145613459_e16d861330e24b5bbabb67bfccb5835b.jpg",
+      "PackagePath": "staticwebassets\\images\\properties\\20240402145613459_e16d861330e24b5bbabb67bfccb5835b.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240402145644346_92ebd57e3fb5437292468130e674e835.jpg",
+      "PackagePath": "staticwebassets\\images\\properties\\20240402145644346_92ebd57e3fb5437292468130e674e835.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240402150541196_8786a6cd36114d8a9d7d8e43d04bee31.jpg",
+      "PackagePath": "staticwebassets\\images\\properties\\20240402150541196_8786a6cd36114d8a9d7d8e43d04bee31.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240403030953247_e8fbf6d6135046f3acd766306d96dfd5.jpeg",
+      "PackagePath": "staticwebassets\\images\\properties\\20240403030953247_e8fbf6d6135046f3acd766306d96dfd5.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240403030953256_07209666c3e441abbbaf940378597fcc.jpeg",
+      "PackagePath": "staticwebassets\\images\\properties\\20240403030953256_07209666c3e441abbbaf940378597fcc.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240403031044728_233d288cbb0c482fb0e81b1142caffdc.png",
+      "PackagePath": "staticwebassets\\images\\properties\\20240403031044728_233d288cbb0c482fb0e81b1142caffdc.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240403031044729_239c16efa8df4659919454953cc5d7c8.png",
+      "PackagePath": "staticwebassets\\images\\properties\\20240403031044729_239c16efa8df4659919454953cc5d7c8.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240403031044730_75e4e7cc326b4ce0b450ddd821e039b3.png",
+      "PackagePath": "staticwebassets\\images\\properties\\20240403031044730_75e4e7cc326b4ce0b450ddd821e039b3.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240403031044730_868c2259491a45ab95daff6dd93498fb.png",
+      "PackagePath": "staticwebassets\\images\\properties\\20240403031044730_868c2259491a45ab95daff6dd93498fb.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240403031044731_4ab6fc1eadde46f68c47d4fb21889af4.png",
+      "PackagePath": "staticwebassets\\images\\properties\\20240403031044731_4ab6fc1eadde46f68c47d4fb21889af4.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240404223319338_d8512fd5ff724072bd1923c30db81b02.jpg",
+      "PackagePath": "staticwebassets\\images\\properties\\20240404223319338_d8512fd5ff724072bd1923c30db81b02.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240404223319348_930e4c51c0fc4003b7a01ef15b47d7f7.jpg",
+      "PackagePath": "staticwebassets\\images\\properties\\20240404223319348_930e4c51c0fc4003b7a01ef15b47d7f7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240404223319352_6bf592177e5c4e21ba40d30943c1b1bb.jpg",
+      "PackagePath": "staticwebassets\\images\\properties\\20240404223319352_6bf592177e5c4e21ba40d30943c1b1bb.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240404223319353_bf01fec2972445d5abdf5fe31faf3d8c.jpg",
+      "PackagePath": "staticwebassets\\images\\properties\\20240404223319353_bf01fec2972445d5abdf5fe31faf3d8c.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240404223319354_2d640e44087f4063b2b8a76b5553431e.jpg",
+      "PackagePath": "staticwebassets\\images\\properties\\20240404223319354_2d640e44087f4063b2b8a76b5553431e.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240404224021270_6c03f905ed2d42e3a17f7393496de002.jpg",
+      "PackagePath": "staticwebassets\\images\\properties\\20240404224021270_6c03f905ed2d42e3a17f7393496de002.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240404224021272_7496a6b8f5bf428f9a8ee69d406e038d.jpg",
+      "PackagePath": "staticwebassets\\images\\properties\\20240404224021272_7496a6b8f5bf428f9a8ee69d406e038d.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240404224021272_c0fe995947a9431e84a0a693e6ac7248.jpg",
+      "PackagePath": "staticwebassets\\images\\properties\\20240404224021272_c0fe995947a9431e84a0a693e6ac7248.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240404224021273_99a1520a4f6248c1989f22f560dac3b2.jpg",
+      "PackagePath": "staticwebassets\\images\\properties\\20240404224021273_99a1520a4f6248c1989f22f560dac3b2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240404224021273_f85a9f8aa29c467d9d863016b839e215.jpg",
+      "PackagePath": "staticwebassets\\images\\properties\\20240404224021273_f85a9f8aa29c467d9d863016b839e215.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240404224021274_c6e8a6c8d33b4d67b9d860ef192c74da.jpg",
+      "PackagePath": "staticwebassets\\images\\properties\\20240404224021274_c6e8a6c8d33b4d67b9d860ef192c74da.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240404224021274_d5ea9f1f167947cbb2ea2a0de65cd44b.jpg",
+      "PackagePath": "staticwebassets\\images\\properties\\20240404224021274_d5ea9f1f167947cbb2ea2a0de65cd44b.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240404224627206_d234f48d1f254c8592f6b457581ec4a8.jpg",
+      "PackagePath": "staticwebassets\\images\\properties\\20240404224627206_d234f48d1f254c8592f6b457581ec4a8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240404224627216_d77a9bb07531472b9161383f678b6653.jpg",
+      "PackagePath": "staticwebassets\\images\\properties\\20240404224627216_d77a9bb07531472b9161383f678b6653.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240404224627217_c9f6a85beeec4e919283dc57be0eb6aa.jpg",
+      "PackagePath": "staticwebassets\\images\\properties\\20240404224627217_c9f6a85beeec4e919283dc57be0eb6aa.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240404224627218_90414100cdbf4be98c92534d65e2ed48.jpg",
+      "PackagePath": "staticwebassets\\images\\properties\\20240404224627218_90414100cdbf4be98c92534d65e2ed48.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240404224627221_6e9f8fc2faf34aac8d26884149922292.jpg",
+      "PackagePath": "staticwebassets\\images\\properties\\20240404224627221_6e9f8fc2faf34aac8d26884149922292.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240404224627225_3e5f5c3b2d414d28b8fadcb4893a6aa0.jpg",
+      "PackagePath": "staticwebassets\\images\\properties\\20240404224627225_3e5f5c3b2d414d28b8fadcb4893a6aa0.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240404224627226_ec4d76fd9ccb44a0b565e54047bcbeb4.jpg",
+      "PackagePath": "staticwebassets\\images\\properties\\20240404224627226_ec4d76fd9ccb44a0b565e54047bcbeb4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240404224627228_978565f175b84b3d81b1277544afe489.jpg",
+      "PackagePath": "staticwebassets\\images\\properties\\20240404224627228_978565f175b84b3d81b1277544afe489.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240404224847824_d791ed5fc8524a4eb809cf3fe8dabb4d.jpg",
+      "PackagePath": "staticwebassets\\images\\properties\\20240404224847824_d791ed5fc8524a4eb809cf3fe8dabb4d.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240404224847826_15376789d0564c4bb5982252a2697533.jpg",
+      "PackagePath": "staticwebassets\\images\\properties\\20240404224847826_15376789d0564c4bb5982252a2697533.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240404224847830_784b8ab1008b4653b751b21346f753bf.jpg",
+      "PackagePath": "staticwebassets\\images\\properties\\20240404224847830_784b8ab1008b4653b751b21346f753bf.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\properties\\20240404224847834_96901731b12e420dae35f494c66b8bf0.jpg",
+      "PackagePath": "staticwebassets\\images\\properties\\20240404224847834_96901731b12e420dae35f494c66b8bf0.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\images\\visa.png",
+      "PackagePath": "staticwebassets\\images\\visa.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\media\\20240114203139335_f4b3c410a0c6442db5a7e4c3d77c69a3",
+      "PackagePath": "staticwebassets\\media"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\media\\20240114203440603_9ec935fa49644f3091e7f4a07de53595.mp4",
+      "PackagePath": "staticwebassets\\media\\20240114203440603_9ec935fa49644f3091e7f4a07de53595.mp4"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\media\\20240114203537856_71ee5b22633e4e7ca92c7badef0b0999.jpg",
+      "PackagePath": "staticwebassets\\media\\20240114203537856_71ee5b22633e4e7ca92c7badef0b0999.jpg"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\media\\20240114214637301_743d9f525df14251a941433bdf20448a.gif",
+      "PackagePath": "staticwebassets\\media\\20240114214637301_743d9f525df14251a941433bdf20448a.gif"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\media\\20240114220516900_32483fd7e11f408ebc2494b84e3f76f4.mp4",
+      "PackagePath": "staticwebassets\\media\\20240114220516900_32483fd7e11f408ebc2494b84e3f76f4.mp4"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\media\\20240121105302657_ef8f0a481c8b4a68b92e38f35d4ced50.mp4",
+      "PackagePath": "staticwebassets\\media\\20240121105302657_ef8f0a481c8b4a68b92e38f35d4ced50.mp4"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\media\\logo.png",
+      "PackagePath": "staticwebassets\\media\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\abdal\\Desktop\\c#\\RealEstate\\RealEstate\\wwwroot\\media\\مين أكثر شخصية مكروهة في أنمي ناروتو؟ \uD83D\uDE21 (1).mp4",
+      "PackagePath": "staticwebassets\\media\\مين أكثر شخصية مكروهة في أنمي ناروتو؟ \uD83D\uDE21 (1).mp4"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.RealEstate.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.RealEstate.props",
+      "PackagePath": "build\\RealEstate.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.RealEstate.props",
+      "PackagePath": "buildMultiTargeting\\RealEstate.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.RealEstate.props",
+      "PackagePath": "buildTransitive\\RealEstate.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
